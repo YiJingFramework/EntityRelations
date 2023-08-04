@@ -1,4 +1,5 @@
-﻿using YiJingFramework.EntityRelations.GuaToCharacterExtensions;
+﻿using YiJingFramework.EntityRelations.GuaCharacters;
+using YiJingFramework.EntityRelations.GuaCharacters.Extensions;
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
@@ -23,6 +24,6 @@ Console.WriteLine(GuaHexagram.Parse("111111").ToUnicodeChar());
 Console.WriteLine();
 // Output: ䷀
 
-_ = GuaToCharacterExtensions.TryFromUnicodeChar('䷀', out Gua? result);
+_ = GuaFromCharacter.TryConvert('䷀', out Gua? result);
 Console.WriteLine(result);
 // Output: 

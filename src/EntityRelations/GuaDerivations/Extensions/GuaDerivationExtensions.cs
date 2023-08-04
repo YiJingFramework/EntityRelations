@@ -2,7 +2,7 @@
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 
-namespace YiJingFramework.EntityRelations.GuaDerivation.Extensions;
+namespace YiJingFramework.EntityRelations.GuaDerivations.Extensions;
 
 /// <summary>
 /// 关于卦变换的扩展。

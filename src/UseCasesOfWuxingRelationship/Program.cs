@@ -1,18 +1,20 @@
-﻿using YiJingFramework.EntityRelations.EntityToString.Conversions;
-using YiJingFramework.EntityRelations.WuxingRelationship.Extensions;
+﻿using YiJingFramework.EntityRelations.EntityStrings.Conversions;
+using YiJingFramework.EntityRelations.EntityStrings.Extensions;
+using YiJingFramework.EntityRelations.WuxingRelations;
+using YiJingFramework.EntityRelations.WuxingRelations.Extensions;
 using YiJingFramework.PrimitiveTypes;
 
 var wood = Wuxing.Wood;
 var metal = Wuxing.Metal;
-var relationship = RelationOfWuxing.OvercomingMe;
+var relationship = WuxingRelation.OvercomingMe;
 
 Console.WriteLine(
     $"For {wood}, " +
-    $"{metal} is the Wuxing that {wood.GetWuxingRelationship(metal)}.");
+    $"{metal} is the Wuxing that {wood.GetRelation(metal)}.");
 
 Console.WriteLine(
     $"For {wood}, " +
-    $"the Wuxing that {relationship} is {wood.GetWuxingThat(relationship)}.");
+    $"the Wuxing that {relationship} is {wood.GetWuxing(relationship)}.");
 
 var conversion = WuxingRelationToStringConversions.LiuqinInEnglish;
 Console.WriteLine($"{relationship.ToString(conversion)} of {wood} is {metal}.");

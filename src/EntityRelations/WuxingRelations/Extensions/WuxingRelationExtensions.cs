@@ -24,7 +24,7 @@ public static class WuxingRelationExtensions
     /// 关系。
     /// The relationship.
     /// </returns>
-    public static WuxingRelation GetWuxingRelationship(this Wuxing me, Wuxing other)
+    public static WuxingRelation GetRelation(this Wuxing me, Wuxing other)
     {
         return (WuxingRelation)(((int)other - (int)me + 5) % 5);
     }
@@ -45,7 +45,7 @@ public static class WuxingRelationExtensions
     /// 另一五行。
     /// The another Wuxing.
     /// </returns>
-    public static Wuxing GetWuxingThat(this Wuxing me, WuxingRelation relationship)
+    public static Wuxing GetWuxing(this Wuxing me, WuxingRelation relationship)
     {
         return me + (int)relationship;
     }

@@ -1,8 +1,8 @@
-﻿using YiJingFramework.EntityRelations.GuaDerivation.Extensions;
+﻿using YiJingFramework.EntityRelations.GuaDerivations.Extensions;
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-Console.WriteLine(Gua.Parse("111111").ReverseLines(1, 2, 3, 2));
+Console.WriteLine(Gua.Parse("111111").ChangeLines(1, 2, 3, 2));
 Console.WriteLine();
 // Output: 101011
 

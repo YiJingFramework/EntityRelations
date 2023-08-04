@@ -1,6 +1,6 @@
 ﻿using System.Text;
-using YiJingFramework.EntityRelations.EntityAttributes.Extensions;
-using YiJingFramework.EntityRelations.GuaToCharacterExtensions;
+using YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
+using YiJingFramework.EntityRelations.GuaCharacters.Extensions;
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 

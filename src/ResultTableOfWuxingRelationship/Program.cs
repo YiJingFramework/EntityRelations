@@ -1,5 +1,7 @@
-﻿using YiJingFramework.EntityRelations.EntityToString.Conversions;
-using YiJingFramework.EntityRelations.WuxingRelationship.Extensions;
+﻿using YiJingFramework.EntityRelations.EntityStrings.Conversions;
+using YiJingFramework.EntityRelations.EntityStrings.Extensions;
+using YiJingFramework.EntityRelations.WuxingRelations;
+using YiJingFramework.EntityRelations.WuxingRelations.Extensions;
 using YiJingFramework.PrimitiveTypes;
 
 static void WriteTableLine(IEnumerable<string> items)
@@ -17,11 +19,11 @@ var wuxings = from i in Enumerable.Range(0, 5)
 
 var relationships = new[]
 {
-    RelationOfWuxing.SameAsMe,
-    RelationOfWuxing.GeneratingMe,
-    RelationOfWuxing.GeneratedByMe,
-    RelationOfWuxing.OvercomingMe,
-    RelationOfWuxing.OvercameByMe
+    WuxingRelation.SameAsMe,
+    WuxingRelation.GeneratingMe,
+    WuxingRelation.GeneratedByMe,
+    WuxingRelation.OvercomingMe,
+    WuxingRelation.OvercameByMe
 };
 
 var inChinese = WuxingRelationToStringConversions.InChinese;
@@ -29,12 +31,12 @@ var inChinese = WuxingRelationToStringConversions.InChinese;
 WriteTableLine(wuxings.Select(x => x.ToString("C")).Prepend("关系"));
 WriteTableLine(wuxings.Select(x => ":-:").Prepend(":-:"));
 foreach (var r in relationships)
-    WriteTableLine(wuxings.Select(x => x.GetWuxingThat(r).ToString("C")).Prepend(r.ToString(inChinese)));
+    WriteTableLine(wuxings.Select(x => x.GetWuxing(r).ToString("C")).Prepend(r.ToString(inChinese)));
 
 Console.WriteLine();
 
 WriteTableLine(wuxings.Select(x => x.ToString()).Prepend("Relationship"));
 WriteTableLine(wuxings.Select(x => ":-:").Prepend(":-:"));
 foreach (var r in relationships)
-    WriteTableLine(wuxings.Select(x => x.GetWuxingThat(r).ToString()).Prepend(r.ToString()));
+    WriteTableLine(wuxings.Select(x => x.GetWuxing(r).ToString()).Prepend(r.ToString()));
 
