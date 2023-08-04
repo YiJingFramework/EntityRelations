@@ -1,9 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.EntityAttributes.Extensions;
-using YiJingFramework.PrimitiveTypes;
+using YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
+using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.EntityWuxingExtensions.Tests;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions.Tests;
 
 [TestClass()]
 public class GuaTrigramWuxingExtensionsTests

@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.EntityAttributes.Extensions;
 using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.EntityYinyangExtensions.Tests;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions.Tests;
 
 [TestClass()]
 public class TianganDizhiYinyangExtensionsTests

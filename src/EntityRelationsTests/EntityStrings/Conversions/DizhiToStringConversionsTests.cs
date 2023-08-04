@@ -1,30 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using YiJingFramework.EntityRelations.EntityStrings.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using YiJingFramework.PrimitiveTypes;
-using System.Xml.Linq;
-using YiJingFramework.EntityRelations.WuxingRelationshipExtensions;
-using YiJingFramework.EntityRelations.Shared;
-using System.Net.NetworkInformation;
-using System.Runtime.InteropServices;
-using YiJingFramework.EntityRelations.EntityToString.Conversions;
 
-namespace YiJingFramework.EntityRelations.DizhiToStringExtensions.Tests;
+namespace YiJingFramework.EntityRelations.EntityStrings.Conversions.Tests;
 
 [TestClass()]
-public class DizhiToStringExtensionsTests
+public class DizhiToStringConversionsTests
 {
     [TestMethod()]
     public void ToStringTest()
     {
-        ConversionToString<Dizhi>? conversion = null;
-        Assert.AreEqual("Zi", Dizhi.Zi.ToString(conversion));
-        Assert.AreEqual("Chou", Dizhi.Chou.ToString(conversion));
-        
-        conversion = DizhiToStringConversions.Shengxiao;
+        var conversion = DizhiToStringConversions.Shengxiao;
         Assert.AreEqual("鼠", Dizhi.Zi.ToString(conversion));
         Assert.AreEqual("牛", Dizhi.Chou.ToString(conversion));
         Assert.AreEqual("虎", Dizhi.Yin.ToString(conversion));
