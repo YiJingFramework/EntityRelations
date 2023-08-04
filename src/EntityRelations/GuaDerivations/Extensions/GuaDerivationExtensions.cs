@@ -74,7 +74,7 @@ public static class GuaDerivationExtensions
         bool throwIfOutOfRange = true)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.ChangeLines(lineIndexes, throwIfOutOfRange).As<TGua>();
+        return (gua?.AsGua())!.ChangeLines(lineIndexes, throwIfOutOfRange).AsFixed<TGua>();
     }
 
     /// <summary>
@@ -112,7 +112,7 @@ public static class GuaDerivationExtensions
     public static TGua ChangeLines<TGua>(this TGua gua, params int[] lineIndexes)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.ChangeLines(lineIndexes, true).As<TGua>();
+        return (gua?.AsGua())!.ChangeLines(lineIndexes, true).AsFixed<TGua>();
     }
     #endregion
 
@@ -144,7 +144,7 @@ public static class GuaDerivationExtensions
     public static TGua Cuogua<TGua>(this TGua gua)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.Cuogua().As<TGua>();
+        return (gua?.AsGua())!.Cuogua().AsFixed<TGua>();
     }
     #endregion
 
@@ -181,7 +181,7 @@ public static class GuaDerivationExtensions
     public static TGua Zonggua<TGua>(this TGua gua)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.Zonggua().As<TGua>();
+        return (gua?.AsGua())!.Zonggua().AsFixed<TGua>();
     }
     #endregion
 

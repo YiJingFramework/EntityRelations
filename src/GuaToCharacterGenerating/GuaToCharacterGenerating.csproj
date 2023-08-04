@@ -9,7 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="YiJingFramework.PrimitiveTypes" Version="1.1.0" />
-    <PackageReference Include="YiJingFramework.PrimitiveTypes.GuaWithFixedCount" Version="1.4.0" />
+    <PackageReference Include="YiJingFramework.PrimitiveTypes.GuaWithFixedCount" Version="1.5.0" />
   </ItemGroup>
 
 </Project>

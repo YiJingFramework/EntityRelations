@@ -32,7 +32,7 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(1);
             {
-                var cdd = gua.As<GuaWith1Line>().ToUnicodeChar();
+                var cdd = gua.AsFixed<GuaWith1Line>().ToUnicodeChar();
                 var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith1Line? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());
@@ -49,7 +49,7 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(2);
             {
-                var cdd = gua.As<GuaWith2Lines>().ToUnicodeChar();
+                var cdd = gua.AsFixed<GuaWith2Lines>().ToUnicodeChar();
                 var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith2Lines? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());
@@ -66,7 +66,7 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(3);
             {
-                var cdd = gua.As<GuaTrigram>().ToUnicodeChar();
+                var cdd = gua.AsFixed<GuaTrigram>().ToUnicodeChar();
                 var bl = GuaFromCharacter.TryConvert(cdd, out GuaTrigram? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());
@@ -83,7 +83,7 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(6);
             {
-                var cdd = gua.As<GuaHexagram>().ToUnicodeChar();
+                var cdd = gua.AsFixed<GuaHexagram>().ToUnicodeChar();
                 var bl = GuaFromCharacter.TryConvert(cdd, out GuaHexagram? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());

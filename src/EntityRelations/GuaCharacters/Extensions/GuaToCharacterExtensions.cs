@@ -78,10 +78,10 @@ public static partial class GuaToCharacterExtensions
 
         return gua.Count switch
         {
-            1 => ToUnicodeChar(gua.As<GuaWith1Line>()),
-            2 => ToUnicodeChar(gua.As<GuaWith2Lines>()),
-            3 => ToUnicodeChar(gua.As<GuaTrigram>()),
-            6 => ToUnicodeChar(gua.As<GuaHexagram>()),
+            1 => ToUnicodeChar(gua.AsFixed<GuaWith1Line>()),
+            2 => ToUnicodeChar(gua.AsFixed<GuaWith2Lines>()),
+            3 => ToUnicodeChar(gua.AsFixed<GuaTrigram>()),
+            6 => ToUnicodeChar(gua.AsFixed<GuaHexagram>()),
             _ => throw new ArgumentException(
                 $"There are no corresponding unicode character for the given Gua '{gua}'.", nameof(gua))
         };
