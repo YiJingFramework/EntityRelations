@@ -1,12 +1,12 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.WuxingRelationshipExtensions;
+namespace YiJingFramework.EntityRelations.WuxingRelations;
 
 /// <summary>
 /// <seealso cref="Wuxing"/> 的生克关系。
 /// The relationships between <seealso cref="Wuxing"/>s.
 /// </summary>
-public enum WuxingRelationship
+public enum WuxingRelation
 {
     /// <summary>
     /// 同“我”者。

@@ -1,4 +1,4 @@
-﻿using YiJingFramework.EntityRelations.EntityYinyangExtensions;
+﻿using YiJingFramework.EntityRelations.EntityAttributes.Extensions;
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 

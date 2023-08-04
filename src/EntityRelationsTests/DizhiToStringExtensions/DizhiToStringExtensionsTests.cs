@@ -1,5 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.DizhiToStringExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +10,7 @@ using YiJingFramework.EntityRelations.WuxingRelationshipExtensions;
 using YiJingFramework.EntityRelations.Shared;
 using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
+using YiJingFramework.EntityRelations.EntityToString.Conversions;
 
 namespace YiJingFramework.EntityRelations.DizhiToStringExtensions.Tests;
 

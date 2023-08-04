@@ -2,7 +2,7 @@
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-namespace YiJingFramework.EntityRelations.EntityYinyangExtensions;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 
 /// <summary>
 /// 关于八卦阴阳的扩展。
@@ -13,7 +13,8 @@ public static class GuaTrigramYinyangExtensions
     internal static Yinyang YinyangOfCheckedTrigram(int guaHash)
     {
         Debug.Assert(guaHash is >= 0b1000 and <= 0b1111);
-        return guaHash switch {
+        return guaHash switch
+        {
             0b1_000 => PrimitiveTypes.Yinyang.Yin,
             0b1_100 => PrimitiveTypes.Yinyang.Yang,
             0b1_010 => PrimitiveTypes.Yinyang.Yang,

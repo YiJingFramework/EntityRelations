@@ -27,7 +27,7 @@ for (int i = 0; i <= 0b111111; i++)
     var gua = GuaHexagram.Parse(Convert.ToString(i, 2).PadLeft(6, '0'));
     var c = ToUnicodeChar(gua);
     string p = "\\u" + ((int)c).ToString("x4");
-    Console.WriteLine($"{gua.GetHashCode()} => '{p}',");
+    Console.WriteLine($"{gua.AsGua().ToBytes()[0]} => '{p}',");
 }
 
 Console.WriteLine();
@@ -40,5 +40,5 @@ for (int diff = 0; diff <= 0b111111; diff++)
     var gua = Gua.FromBytes(hexagramTable[diff]);
     var s = gua.Select(line => line.IsYang ? "yang" : "yin");
     var ss = string.Join(", ", s);
-    Console.WriteLine($"{diff} => new Gua({ss}),");
+    Console.WriteLine($"{diff} => new GuaHexagram({ss}),");
 }

@@ -1,6 +1,6 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.EntityWuxingExtensions;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 
 /// <summary>
 /// 关于天干地支五行的扩展。
@@ -39,7 +39,8 @@ public static class TianganDizhiWuxingExtensions
     /// </returns>
     public static Wuxing Wuxing(this Dizhi dizhi)
     {
-        return dizhi.Index switch {
+        return dizhi.Index switch
+        {
             1 => PrimitiveTypes.Wuxing.Water, // 子
             2 => PrimitiveTypes.Wuxing.Earth, // 丑
             3 => PrimitiveTypes.Wuxing.Wood, // 寅

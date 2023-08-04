@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using YiJingFramework.EntityRelations.EntityAttributes.Extensions;
 using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.EntityWuxingExtensions.Tests;

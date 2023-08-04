@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using YiJingFramework.EntityRelations.EntityToString.Conversions;
 using YiJingFramework.EntityRelations.Shared;
-using YiJingFramework.EntityRelations.WuxingRelationshipExtensions;
 using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.WuxingRelationshipExtensions.Tests;
@@ -11,26 +11,26 @@ public class WuxingRelationshipExtensionsTests
     [TestMethod()]
     public void GetWuxingRelationshipTest()
     {
-        Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+        Assert.AreEqual(WuxingRelation.GeneratedByMe,
             Wuxing.Wood.GetWuxingRelationship(Wuxing.Fire));
-        Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+        Assert.AreEqual(WuxingRelation.GeneratedByMe,
             Wuxing.Fire.GetWuxingRelationship(Wuxing.Earth));
-        Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+        Assert.AreEqual(WuxingRelation.GeneratedByMe,
             Wuxing.Earth.GetWuxingRelationship(Wuxing.Metal));
-        Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+        Assert.AreEqual(WuxingRelation.GeneratedByMe,
             Wuxing.Metal.GetWuxingRelationship(Wuxing.Water));
-        Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+        Assert.AreEqual(WuxingRelation.GeneratedByMe,
             Wuxing.Water.GetWuxingRelationship(Wuxing.Wood));
 
-        Assert.AreEqual(WuxingRelationship.GeneratingMe,
+        Assert.AreEqual(WuxingRelation.GeneratingMe,
             Wuxing.Wood.GetWuxingRelationship(Wuxing.Water));
-        Assert.AreEqual(WuxingRelationship.GeneratingMe,
+        Assert.AreEqual(WuxingRelation.GeneratingMe,
             Wuxing.Water.GetWuxingRelationship(Wuxing.Metal));
-        Assert.AreEqual(WuxingRelationship.GeneratingMe,
+        Assert.AreEqual(WuxingRelation.GeneratingMe,
             Wuxing.Metal.GetWuxingRelationship(Wuxing.Earth));
-        Assert.AreEqual(WuxingRelationship.GeneratingMe,
+        Assert.AreEqual(WuxingRelation.GeneratingMe,
             Wuxing.Earth.GetWuxingRelationship(Wuxing.Fire));
-        Assert.AreEqual(WuxingRelationship.GeneratingMe,
+        Assert.AreEqual(WuxingRelation.GeneratingMe,
             Wuxing.Fire.GetWuxingRelationship(Wuxing.Wood));
     }
 
@@ -40,28 +40,28 @@ public class WuxingRelationshipExtensionsTests
         for (int i = 0; i < 5; i++)
         {
             var woodP = (Wuxing)i;
-            var fireP = woodP.GetWuxingThat(WuxingRelationship.GeneratedByMe);
-            var earthP = fireP.GetWuxingThat(WuxingRelationship.GeneratedByMe);
-            var metalP = earthP.GetWuxingThat(WuxingRelationship.GeneratedByMe);
-            var waterP = metalP.GetWuxingThat(WuxingRelationship.GeneratedByMe);
+            var fireP = woodP.GetWuxingThat(WuxingRelation.GeneratedByMe);
+            var earthP = fireP.GetWuxingThat(WuxingRelation.GeneratedByMe);
+            var metalP = earthP.GetWuxingThat(WuxingRelation.GeneratedByMe);
+            var waterP = metalP.GetWuxingThat(WuxingRelation.GeneratedByMe);
 
-            Assert.AreEqual(WuxingRelationship.GeneratedByMe,
+            Assert.AreEqual(WuxingRelation.GeneratedByMe,
                 woodP.GetWuxingRelationship(fireP));
-            Assert.AreEqual(WuxingRelationship.OvercameByMe,
+            Assert.AreEqual(WuxingRelation.OvercameByMe,
                 woodP.GetWuxingRelationship(earthP));
-            Assert.AreEqual(WuxingRelationship.OvercomingMe,
+            Assert.AreEqual(WuxingRelation.OvercomingMe,
                 woodP.GetWuxingRelationship(metalP));
-            Assert.AreEqual(WuxingRelationship.GeneratingMe,
+            Assert.AreEqual(WuxingRelation.GeneratingMe,
                 woodP.GetWuxingRelationship(waterP));
 
             Assert.AreEqual(fireP,
-                woodP.GetWuxingThat(WuxingRelationship.GeneratedByMe));
+                woodP.GetWuxingThat(WuxingRelation.GeneratedByMe));
             Assert.AreEqual(earthP,
-                woodP.GetWuxingThat(WuxingRelationship.OvercameByMe));
+                woodP.GetWuxingThat(WuxingRelation.OvercameByMe));
             Assert.AreEqual(metalP,
-                woodP.GetWuxingThat(WuxingRelationship.OvercomingMe));
+                woodP.GetWuxingThat(WuxingRelation.OvercomingMe));
             Assert.AreEqual(waterP,
-                woodP.GetWuxingThat(WuxingRelationship.GeneratingMe));
+                woodP.GetWuxingThat(WuxingRelation.GeneratingMe));
         }
     }
 
@@ -70,46 +70,46 @@ public class WuxingRelationshipExtensionsTests
     public void ToStringTest()
     {
         Assert.AreEqual(
-            WuxingRelationship.GeneratingMe.ToString(), 
-            WuxingRelationship.GeneratingMe.ToString(conversion: null));
+            WuxingRelation.GeneratingMe.ToString(), 
+            WuxingRelation.GeneratingMe.ToString(conversion: null));
         Assert.AreEqual(
-            WuxingRelationship.GeneratedByMe.ToString(),
-            WuxingRelationship.GeneratedByMe.ToString(conversion: null));
+            WuxingRelation.GeneratedByMe.ToString(),
+            WuxingRelation.GeneratedByMe.ToString(conversion: null));
         Assert.AreEqual(
-            WuxingRelationship.OvercameByMe.ToString(),
-            WuxingRelationship.OvercameByMe.ToString(conversion: null));
+            WuxingRelation.OvercameByMe.ToString(),
+            WuxingRelation.OvercameByMe.ToString(conversion: null));
         Assert.AreEqual(
-            WuxingRelationship.OvercomingMe.ToString(),
-            WuxingRelationship.OvercomingMe.ToString(conversion: null));
+            WuxingRelation.OvercomingMe.ToString(),
+            WuxingRelation.OvercomingMe.ToString(conversion: null));
         Assert.AreEqual(
-            WuxingRelationship.SameAsMe.ToString(),
-            WuxingRelationship.SameAsMe.ToString(conversion: null));
+            WuxingRelation.SameAsMe.ToString(),
+            WuxingRelation.SameAsMe.ToString(conversion: null));
         Assert.AreEqual(
-            ((WuxingRelationship)100).ToString(),
-            ((WuxingRelationship)100).ToString(conversion: null));
+            ((WuxingRelation)100).ToString(),
+            ((WuxingRelation)100).ToString(conversion: null));
 
-        var c = WuxingRelationshipToStringConversions.InChinese;
-        Assert.AreEqual("生我", WuxingRelationship.GeneratingMe.ToString(c));
-        Assert.AreEqual("我生", WuxingRelationship.GeneratedByMe.ToString(c));
-        Assert.AreEqual("我克", WuxingRelationship.OvercameByMe.ToString(c));
-        Assert.AreEqual("克我", WuxingRelationship.OvercomingMe.ToString(c));
-        Assert.AreEqual("同我", WuxingRelationship.SameAsMe.ToString(c));
-        Assert.AreEqual("100", ((WuxingRelationship)100).ToString(c));
+        var c = WuxingRelationToStringConversions.InChinese;
+        Assert.AreEqual("生我", WuxingRelation.GeneratingMe.ToString(c));
+        Assert.AreEqual("我生", WuxingRelation.GeneratedByMe.ToString(c));
+        Assert.AreEqual("我克", WuxingRelation.OvercameByMe.ToString(c));
+        Assert.AreEqual("克我", WuxingRelation.OvercomingMe.ToString(c));
+        Assert.AreEqual("同我", WuxingRelation.SameAsMe.ToString(c));
+        Assert.AreEqual("100", ((WuxingRelation)100).ToString(c));
 
-        c = WuxingRelationshipToStringConversions.Liuqin;
-        Assert.AreEqual("父母", WuxingRelationship.GeneratingMe.ToString(c));
-        Assert.AreEqual("子孙", WuxingRelationship.GeneratedByMe.ToString(c));
-        Assert.AreEqual("妻财", WuxingRelationship.OvercameByMe.ToString(c));
-        Assert.AreEqual("官鬼", WuxingRelationship.OvercomingMe.ToString(c));
-        Assert.AreEqual("兄弟", WuxingRelationship.SameAsMe.ToString(c));
-        Assert.AreEqual("100", ((WuxingRelationship)100).ToString(c));
+        c = WuxingRelationToStringConversions.Liuqin;
+        Assert.AreEqual("父母", WuxingRelation.GeneratingMe.ToString(c));
+        Assert.AreEqual("子孙", WuxingRelation.GeneratedByMe.ToString(c));
+        Assert.AreEqual("妻财", WuxingRelation.OvercameByMe.ToString(c));
+        Assert.AreEqual("官鬼", WuxingRelation.OvercomingMe.ToString(c));
+        Assert.AreEqual("兄弟", WuxingRelation.SameAsMe.ToString(c));
+        Assert.AreEqual("100", ((WuxingRelation)100).ToString(c));
 
-        c = WuxingRelationshipToStringConversions.LiuqinInEnglish;
-        Assert.AreEqual("Parent", WuxingRelationship.GeneratingMe.ToString(c));
-        Assert.AreEqual("Offspring", WuxingRelationship.GeneratedByMe.ToString(c));
-        Assert.AreEqual("Wife&Wealth", WuxingRelationship.OvercameByMe.ToString(c));
-        Assert.AreEqual("Superior&Spirit", WuxingRelationship.OvercomingMe.ToString(c));
-        Assert.AreEqual("Peer", WuxingRelationship.SameAsMe.ToString(c));
-        Assert.AreEqual("100", ((WuxingRelationship)100).ToString(c));
+        c = WuxingRelationToStringConversions.LiuqinInEnglish;
+        Assert.AreEqual("Parent", WuxingRelation.GeneratingMe.ToString(c));
+        Assert.AreEqual("Offspring", WuxingRelation.GeneratedByMe.ToString(c));
+        Assert.AreEqual("Wife&Wealth", WuxingRelation.OvercameByMe.ToString(c));
+        Assert.AreEqual("Superior&Spirit", WuxingRelation.OvercomingMe.ToString(c));
+        Assert.AreEqual("Peer", WuxingRelation.SameAsMe.ToString(c));
+        Assert.AreEqual("100", ((WuxingRelation)100).ToString(c));
     }
 }

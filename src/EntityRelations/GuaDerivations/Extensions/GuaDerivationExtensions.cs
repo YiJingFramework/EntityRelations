@@ -2,15 +2,15 @@
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 
-namespace YiJingFramework.EntityRelations.GuaDerivingExtensions;
+namespace YiJingFramework.EntityRelations.GuaDerivation.Extensions;
 
 /// <summary>
 /// 关于卦变换的扩展。
 /// Extensions about Guas' derivation.
 /// </summary>
-public static class GuaDerivingExtensions
+public static class GuaDerivationExtensions
 {
-    #region ReverseLines
+    #region ChangeLines
     /// <summary>
     /// 改变卦中几爻，返回修改后的卦。
     /// Reverse some lines in a Gua and returns the modified Gua.
@@ -22,7 +22,7 @@ public static class GuaDerivingExtensions
     /// <param name="lineIndexes">
     /// 要修改的爻。
     /// 如果出现两次，将会翻转回来。
-    /// The lines to reverse.
+    /// The lines to be reversed.
     /// If a number appears twice, this line will be reversed back.
     /// </param>
     /// <param name="throwIfOutOfRange">
@@ -45,7 +45,7 @@ public static class GuaDerivingExtensions
     /// If <paramref name="throwIfOutOfRange"/> is set to <c>true</c>, 
     /// this exception will occurs when one of the indexes is out of range.
     /// </exception>
-    public static Gua ReverseLines(
+    public static Gua ChangeLines(
         this Gua gua, IEnumerable<int> lineIndexes,
         bool throwIfOutOfRange = true)
     {
@@ -68,13 +68,13 @@ public static class GuaDerivingExtensions
         return new(lines);
     }
 
-    /// <inheritdoc cref="ReverseLines(Gua, IEnumerable{int}, bool)"/>
-    public static TGua ReverseLines<TGua>(
+    /// <inheritdoc cref="ChangeLines(Gua, IEnumerable{int}, bool)"/>
+    public static TGua ChangeLines<TGua>(
         this TGua gua, IEnumerable<int> lineIndexes,
         bool throwIfOutOfRange = true)
-        where TGua : IGuaWithFixedCount<TGua>
+        where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return ReverseLines(gua?.AsGua()!, lineIndexes, throwIfOutOfRange).As<TGua>();
+        return (gua?.AsGua())!.ChangeLines(lineIndexes, throwIfOutOfRange).As<TGua>();
     }
 
     /// <summary>
@@ -103,16 +103,16 @@ public static class GuaDerivingExtensions
     /// 索引超出范围。
     /// One of the indexes is out of range.
     /// </exception>
-    public static Gua ReverseLines(this Gua gua, params int[] lineIndexes)
+    public static Gua ChangeLines(this Gua gua, params int[] lineIndexes)
     {
-        return ReverseLines(gua, lineIndexes, true);
+        return gua.ChangeLines(lineIndexes, true);
     }
 
-    /// <inheritdoc cref="ReverseLines(Gua, int[])"/>
-    public static TGua ReverseLines<TGua>(this TGua gua, params int[] lineIndexes)
-        where TGua : IGuaWithFixedCount<TGua>
+    /// <inheritdoc cref="ChangeLines(Gua, int[])"/>
+    public static TGua ChangeLines<TGua>(this TGua gua, params int[] lineIndexes)
+        where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return ReverseLines(gua?.AsGua()!, lineIndexes, true).As<TGua>();
+        return (gua?.AsGua())!.ChangeLines(lineIndexes, true).As<TGua>();
     }
     #endregion
 
@@ -142,9 +142,9 @@ public static class GuaDerivingExtensions
 
     /// <inheritdoc cref="Cuogua(Gua)" />
     public static TGua Cuogua<TGua>(this TGua gua)
-        where TGua : IGuaWithFixedCount<TGua>
+        where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return Cuogua(gua?.AsGua()!).As<TGua>();
+        return (gua?.AsGua())!.Cuogua().As<TGua>();
     }
     #endregion
 
@@ -179,9 +179,9 @@ public static class GuaDerivingExtensions
 
     /// <inheritdoc cref="Zonggua(Gua)" />
     public static TGua Zonggua<TGua>(this TGua gua)
-        where TGua : IGuaWithFixedCount<TGua>
+        where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return Zonggua(gua?.AsGua()!).As<TGua>();
+        return (gua?.AsGua())!.Zonggua().As<TGua>();
     }
     #endregion
 
@@ -298,9 +298,9 @@ public static class GuaDerivingExtensions
 
     /// <inheritdoc cref="Split(Gua, int)" />
     public static IEnumerable<Gua> Split<TGua>(this TGua gua, int pieceLength)
-        where TGua : IGuaWithFixedCount<TGua>
+        where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return Split(gua?.AsGua()!, pieceLength);
+        return (gua?.AsGua())!.Split(pieceLength);
     }
     #endregion
 }

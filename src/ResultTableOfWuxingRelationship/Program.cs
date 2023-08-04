@@ -1,4 +1,5 @@
-﻿using YiJingFramework.EntityRelations.WuxingRelationshipExtensions;
+﻿using YiJingFramework.EntityRelations.EntityToString.Conversions;
+using YiJingFramework.EntityRelations.WuxingRelationship.Extensions;
 using YiJingFramework.PrimitiveTypes;
 
 static void WriteTableLine(IEnumerable<string> items)
@@ -16,14 +17,14 @@ var wuxings = from i in Enumerable.Range(0, 5)
 
 var relationships = new[]
 {
-    WuxingRelationship.SameAsMe,
-    WuxingRelationship.GeneratingMe,
-    WuxingRelationship.GeneratedByMe,
-    WuxingRelationship.OvercomingMe,
-    WuxingRelationship.OvercameByMe
+    RelationOfWuxing.SameAsMe,
+    RelationOfWuxing.GeneratingMe,
+    RelationOfWuxing.GeneratedByMe,
+    RelationOfWuxing.OvercomingMe,
+    RelationOfWuxing.OvercameByMe
 };
 
-var inChinese = WuxingRelationshipToStringConversions.InChinese;
+var inChinese = WuxingRelationToStringConversions.InChinese;
 
 WriteTableLine(wuxings.Select(x => x.ToString("C")).Prepend("关系"));
 WriteTableLine(wuxings.Select(x => ":-:").Prepend(":-:"));

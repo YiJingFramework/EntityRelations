@@ -2,7 +2,7 @@
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-namespace YiJingFramework.EntityRelations.EntityWuxingExtensions;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 
 /// <summary>
 /// 关于八卦五行的扩展。
@@ -13,7 +13,8 @@ public static class GuaTrigramWuxingExtensions
     internal static Wuxing WuxingOfCheckedTrigram(int guaHash)
     {
         Debug.Assert(guaHash is >= 0b1000 and <= 0b1111);
-        return guaHash switch {
+        return guaHash switch
+        {
             0b1_000 => PrimitiveTypes.Wuxing.Earth,
             0b1_100 => PrimitiveTypes.Wuxing.Wood,
             0b1_010 => PrimitiveTypes.Wuxing.Water,

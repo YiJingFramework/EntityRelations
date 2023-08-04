@@ -1,6 +1,6 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.EntityYinyangExtensions;
+namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 
 /// <summary>
 /// 关于天干地支阴阳的扩展。

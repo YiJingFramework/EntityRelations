@@ -1,7 +1,6 @@
-﻿using YiJingFramework.EntityRelations.Shared;
-using YiJingFramework.PrimitiveTypes;
+﻿using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.DizhiToStringExtensions;
+namespace YiJingFramework.EntityRelations.EntityStrings.Conversions;
 
 /// <summary>
 /// 提供一些针对 <seealso cref="Dizhi"/> 的 <seealso cref="ConversionToString{T}"/> 样例。
@@ -16,8 +15,10 @@ public static class DizhiToStringConversions
     /// They will be 鼠, 牛, 虎, 兔, 龙, 蛇, 马, 羊, 猴, 鸡, 狗 and 猪 .
     /// </summary>
     public static ConversionToString<Dizhi> Shengxiao { get; }
-        = (dizhi) => {
-            return dizhi.Index switch {
+        = (dizhi) =>
+        {
+            return dizhi.Index switch
+            {
                 1 => "鼠",
                 2 => "牛",
                 3 => "虎",
@@ -40,8 +41,10 @@ public static class DizhiToStringConversions
     /// They will be Rat, Cow, Tiger, Rabbit, Long, Snake, Horse, Sheep, Monkey, Chicken, Dog and Pig.
     /// </summary>
     public static ConversionToString<Dizhi> ShengxiaoInEnglish { get; }
-        = (dizhi) => {
-            return dizhi.Index switch {
+        = (dizhi) =>
+        {
+            return dizhi.Index switch
+            {
                 1 => "Rat",
                 2 => "Cow",
                 3 => "Tiger",
