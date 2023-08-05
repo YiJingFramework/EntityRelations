@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EntityRelations\EntityRelations.csproj" />
+    <ProjectReference Include="..\..\EntityRelations\EntityRelations.csproj" />
   </ItemGroup>
 
 </Project>

@@ -27,11 +27,13 @@ static void WriteTableLine(IEnumerable<string> items)
     WriteTableLine(guas.Select(gua => gua.ToUnicodeChar().ToString()));
     WriteTableLine(guas.Select(gua => ":-:"));
     WriteTableLine(guas.Select(gua => gua.Yinyang().ToString("C")));
+    WriteTableLine(guas.Select(gua => gua.Wuxing().ToString("C")));
     Console.WriteLine();
 
     WriteTableLine(guas.Select(gua => gua.ToString()));
     WriteTableLine(guas.Select(gua => ":-:"));
     WriteTableLine(guas.Select(gua => gua.Yinyang().ToString()));
+    WriteTableLine(guas.Select(gua => gua.Wuxing().ToString()));
     Console.WriteLine();
     Console.WriteLine();
 }
@@ -46,11 +48,13 @@ static void WriteTableLine(IEnumerable<string> items)
     WriteTableLine(tiangans.Select(x => x.ToString("C")));
     WriteTableLine(tiangans.Select(x => ":-:"));
     WriteTableLine(tiangans.Select(x => x.Yinyang().ToString("C")));
+    WriteTableLine(tiangans.Select(x => x.Wuxing().ToString("C")));
     Console.WriteLine();
 
     WriteTableLine(tiangans.Select(x => x.ToString()));
     WriteTableLine(tiangans.Select(x => ":-:"));
     WriteTableLine(tiangans.Select(x => x.Yinyang().ToString()));
+    WriteTableLine(tiangans.Select(x => x.Wuxing().ToString()));
     Console.WriteLine();
     Console.WriteLine();
 }
@@ -65,11 +69,13 @@ static void WriteTableLine(IEnumerable<string> items)
     WriteTableLine(dizhis.Select(x => x.ToString("C")));
     WriteTableLine(dizhis.Select(x => ":-:"));
     WriteTableLine(dizhis.Select(x => x.Yinyang().ToString("C")));
+    WriteTableLine(dizhis.Select(x => x.Wuxing().ToString("C")));
     Console.WriteLine();
 
     WriteTableLine(dizhis.Select(x => x.ToString()));
     WriteTableLine(dizhis.Select(x => ":-:"));
     WriteTableLine(dizhis.Select(x => x.Yinyang().ToString()));
+    WriteTableLine(dizhis.Select(x => x.Wuxing().ToString()));
     Console.WriteLine();
     Console.WriteLine();
 }
