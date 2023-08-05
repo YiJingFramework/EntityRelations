@@ -26,4 +26,4 @@ Console.WriteLine();
 
 _ = GuaFromCharacter.TryConvert('䷀', out Gua? result);
 Console.WriteLine(result);
-// Output: 
+// Output: 111111
