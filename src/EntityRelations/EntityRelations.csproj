@@ -8,11 +8,14 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 		<IsTrimmable>true</IsTrimmable>
 
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<PackageId>YiJingFramework.EntityRelations</PackageId>
 		<PackageProjectUrl>https://github.com/YiJingFramework/EntityRelations/wiki</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/YiJingFramework/EntityRelations.git</RepositoryUrl>
-		<Description>This package provides some extensions of the most accepted relationships between the primitive types.</Description>
+		<Description>
+			此包提供了一些关于易学实体之间的关系。
+			This package provides some relationships between the Yi entities.
+		</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -21,6 +24,7 @@
 		<PackageIcon>Taichi.png</PackageIcon>
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>zhouyi;i-ching;yijing;yijingframework</PackageTags>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -28,10 +32,13 @@
 			<Pack>True</Pack>
 			<PackagePath>\</PackagePath>
 		</None>
+		<None Include="..\..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="YiJingFramework.PrimitiveTypes" Version="1.1.0" />
-		<PackageReference Include="YiJingFramework.PrimitiveTypes.GuaWithFixedCount" Version="1.5.0" />
+		<PackageReference Include="YiJingFramework.PrimitiveTypes.GuaWithFixedCount" Version="1.6.0" />
 	</ItemGroup>
 </Project>

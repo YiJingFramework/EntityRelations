@@ -1,6 +1,10 @@
-# YiJingFramework.EntityRelations
+﻿# YiJingFramework.EntityRelations
 
-**Wiki**
+`YiJingFramework.EntityRelations` 是 [YiJingFramework](https://github.com/YiJingFramework/YiJingFramework/wiki) 中的一个包。此包提供了一些关于易学实体之间的关系。
+
+`YiJingFramework.EntityRelations` is one of the packages of [YiJingFramework](https://github.com/YiJingFramework/YiJingFramework/wiki). This package provides some relationships between the Yi entities.
+
+## Wiki
 
 Github: [https://github.com/YiJingFramework/EntityRelations/wiki](https://github.com/YiJingFramework/EntityRelations/wiki)
 
