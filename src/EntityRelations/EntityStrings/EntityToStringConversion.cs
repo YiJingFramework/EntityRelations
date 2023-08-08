@@ -22,4 +22,4 @@ namespace YiJingFramework.EntityRelations.EntityStrings;
 /// 结果。
 /// The result.
 /// </returns>
-public delegate string ConversionToString<T>(T value);
+public delegate string EntityToStringConversion<T>(T value);

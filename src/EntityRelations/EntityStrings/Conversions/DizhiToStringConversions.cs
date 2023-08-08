@@ -3,8 +3,8 @@
 namespace YiJingFramework.EntityRelations.EntityStrings.Conversions;
 
 /// <summary>
-/// 提供一些针对 <seealso cref="Dizhi"/> 的 <seealso cref="ConversionToString{T}"/> 样例。
-/// Provides some samples of <seealso cref="ConversionToString{T}"/> of <seealso cref="Dizhi"/>s.
+/// 提供一些针对 <seealso cref="Dizhi"/> 的 <seealso cref="EntityToStringConversion{T}"/> 样例。
+/// Provides some samples of <seealso cref="EntityToStringConversion{T}"/> of <seealso cref="Dizhi"/>s.
 /// </summary>
 public static class DizhiToStringConversions
 {
@@ -14,7 +14,7 @@ public static class DizhiToStringConversions
     /// This conversion will return the corresponding Shengxiao of a Dizhi in Chinese.
     /// They will be 鼠, 牛, 虎, 兔, 龙, 蛇, 马, 羊, 猴, 鸡, 狗 and 猪 .
     /// </summary>
-    public static ConversionToString<Dizhi> Shengxiao { get; }
+    public static EntityToStringConversion<Dizhi> Shengxiao { get; }
         = (dizhi) =>
         {
             return dizhi.Index switch
@@ -40,7 +40,7 @@ public static class DizhiToStringConversions
     /// This conversion will return the corresponding Shengxiao of a Dizhi in English.
     /// They will be Rat, Cow, Tiger, Rabbit, Long, Snake, Horse, Sheep, Monkey, Chicken, Dog and Pig.
     /// </summary>
-    public static ConversionToString<Dizhi> ShengxiaoInEnglish { get; }
+    public static EntityToStringConversion<Dizhi> ShengxiaoInEnglish { get; }
         = (dizhi) =>
         {
             return dizhi.Index switch

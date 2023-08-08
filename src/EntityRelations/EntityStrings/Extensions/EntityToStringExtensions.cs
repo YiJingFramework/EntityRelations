@@ -39,7 +39,7 @@ public static class EntityToStringExtensions
     /// </exception>
     public static string ToString<T>(
         this T entity,
-        ConversionToString<T> conversion)
+        EntityToStringConversion<T> conversion)
     {
         ArgumentNullException.ThrowIfNull(conversion);
         return conversion(entity);
