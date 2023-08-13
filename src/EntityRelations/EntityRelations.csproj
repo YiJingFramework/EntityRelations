@@ -12,9 +12,7 @@
 		<PackageId>YiJingFramework.EntityRelations</PackageId>
 		<PackageProjectUrl>https://github.com/YiJingFramework/EntityRelations/wiki</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/YiJingFramework/EntityRelations.git</RepositoryUrl>
-		<Description>
-			此包提供了一些关于易学实体之间的关系。
-			This package provides some relationships between the Yi entities.
+		<Description>此包提供了一些关于易学实体之间的关系。 This package provides some relationships between the Yi entities.
 		</Description>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
