@@ -1,14 +1,45 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.DizhiRelations;
+/// <summary>
+/// 地支三会关系。
+/// Sanhui relation between Dizhis.
+/// </summary>
 public sealed class DizhiSanhui : DizhiRelationBase<DizhiLiuhe>
 {
+    /// <summary>
+    /// 此关系中属于孟的地支。
+    /// The Dizhi in this relation which is the Meng (Meng Zhong Ji).
+    /// </summary>
     public Dizhi DizhiOfMeng { get; }
+    /// <summary>
+    /// 此关系中属于仲的地支。
+    /// The Dizhi in this relation which is the Zhong (Meng Zhong Ji).
+    /// </summary>
     public Dizhi DizhiOfZhong { get; }
+    /// <summary>
+    /// 此关系中属于季的地支。
+    /// The Dizhi in this relation which is the Ji (Meng Zhong Ji).
+    /// </summary>
     public Dizhi DizhiOfJi { get; }
 
+    /// <inheritdoc />
+    protected override Dizhi DeterminantForSameAs => this.DizhiOfZhong;
+
+    /// <summary>
+    /// 此关系中的其他地支。
+    /// The Dizhis in this relation expect the current.
+    /// </summary>
     public (Dizhi, Dizhi) TheOthers { get; }
 
+    /// <summary>
+    /// 创建一个此关系的示例。
+    /// Create an instance of this relation.
+    /// </summary>
+    /// <param name="theCurrent">
+    /// 当前的地支。
+    /// The current Dizhi.
+    /// </param>
     public DizhiSanhui(Dizhi theCurrent) : base(theCurrent)
     {
         switch (theCurrent.Index)

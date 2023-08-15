@@ -1,14 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.GuaCharacters;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
-using YiJingFramework.PrimitiveTypes;
-using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 using YiJingFramework.EntityRelations.GuaCharacters.Extensions;
+using YiJingFramework.PrimitiveTypes;
+using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
+using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 
 namespace YiJingFramework.EntityRelations.GuaCharacters.Tests;
 

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace YiJingFramework.EntityRelations.EntityStrings;
+﻿namespace YiJingFramework.EntityRelations.EntityStrings;
 
 /// <summary>
 /// 表示一个从 <typeparamref name="T"/> 到字符串的转换。

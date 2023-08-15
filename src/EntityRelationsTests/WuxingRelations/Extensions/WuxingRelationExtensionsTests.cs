@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.WuxingRelations.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.WuxingRelations.Extensions.Tests;

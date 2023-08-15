@@ -1,12 +1,42 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.DizhiRelations;
+/// <summary>
+/// 地支三刑关系。
+/// Sanxing relation between Dizhis.
+/// </summary>
 public sealed class DizhiSanxing : DizhiRelationBase<DizhiLiuhe>
 {
-    public Dizhi ThePrevious { get; }
-    public Dizhi TheNext { get; }
+    /// <summary>
+    /// 此关系中的地支。
+    /// 可能的值为子卯、丑戌未、寅巳申、辰、午、酉、亥。
+    /// The Dizhis in this relation.
+    /// The possible values are [Zi, Mao], [Chou, Xu, Wei], [Yin, Si, Shen], [Chen], [Wu], [You] and [Hai].
+    /// </summary>
     public IReadOnlyList<Dizhi> Dizhis { get; }
 
+    /// <inheritdoc />
+    protected override Dizhi DeterminantForSameAs => this.Dizhis[0];
+
+    /// <summary>
+    /// 刑当前地支的地支。
+    /// The Dizhi that Xing-s the current.
+    /// </summary>
+    public Dizhi ThePrevious { get; }
+    /// <summary>
+    /// 被当前地支刑的地支。
+    /// The Dizhi that be Xing-ed the current.
+    /// </summary>
+    public Dizhi TheNext { get; }
+
+    /// <summary>
+    /// 创建一个此关系的示例。
+    /// Create an instance of this relation.
+    /// </summary>
+    /// <param name="theCurrent">
+    /// 当前的地支。
+    /// The current Dizhi.
+    /// </param>
     public DizhiSanxing(Dizhi theCurrent) : base(theCurrent)
     {
         switch (theCurrent.Index)

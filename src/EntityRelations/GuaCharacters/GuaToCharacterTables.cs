@@ -8,7 +8,8 @@ internal static class GuaToCharacterTables
 
     public static char SwitchToUnicodeChar(GuaHexagram gua)
     {
-        return gua.AsGua().ToBytes()[0] switch {
+        return gua.AsGua().ToBytes()[0] switch
+        {
             64 => '\u4dc1',
             96 => '\u4dd6',
             80 => '\u4dc7',
@@ -83,7 +84,8 @@ internal static class GuaToCharacterTables
     {
         var yang = Yinyang.Yang;
         var yin = Yinyang.Yin;
-        return hexagramDifference switch {
+        return hexagramDifference switch
+        {
             0 => new GuaHexagram(yang, yang, yang, yang, yang, yang),
             1 => new GuaHexagram(yin, yin, yin, yin, yin, yin),
             2 => new GuaHexagram(yang, yin, yin, yin, yang, yin),

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YiJingFramework.PrimitiveTypes;
-
-namespace YiJingFramework.EntityRelations.EntityStrings.Extensions;
+﻿namespace YiJingFramework.EntityRelations.EntityStrings.Extensions;
 
 /// <summary>
 /// 关于从实体到字符串的转换扩展。

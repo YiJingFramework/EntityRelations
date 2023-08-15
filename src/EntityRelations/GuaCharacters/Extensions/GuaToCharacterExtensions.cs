@@ -29,7 +29,7 @@ public static partial class GuaToCharacterExtensions
     public static char ToUnicodeChar(this GuaHexagram gua)
     {
         ArgumentNullException.ThrowIfNull(gua);
-        
+
         return GuaToCharacterTables.SwitchToUnicodeChar(gua);
     }
 

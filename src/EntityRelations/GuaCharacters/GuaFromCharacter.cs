@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
-using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 
 namespace YiJingFramework.EntityRelations.GuaCharacters;
 
