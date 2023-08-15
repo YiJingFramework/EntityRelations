@@ -14,7 +14,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations.Tests;
 public class DizhiLiuchongTests
 {
     [TestMethod()]
-    public void DizhiLiuchongTest()
+    public void TheCurrentTest()
     {
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuchong(Dizhi.Zi).TheCurrent);
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuchong(Dizhi.Chou).TheCurrent);
@@ -28,7 +28,10 @@ public class DizhiLiuchongTests
         Assert.AreEqual(Dizhi.You, new DizhiLiuchong(Dizhi.You).TheCurrent);
         Assert.AreEqual(Dizhi.Xu, new DizhiLiuchong(Dizhi.Xu).TheCurrent);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuchong(Dizhi.Hai).TheCurrent);
-
+    }
+    [TestMethod()]
+    public void TheOtherTest()
+    {
         Assert.AreEqual(Dizhi.Wu, new DizhiLiuchong(Dizhi.Zi).TheOther);
         Assert.AreEqual(Dizhi.Wei, new DizhiLiuchong(Dizhi.Chou).TheOther);
         Assert.AreEqual(Dizhi.Shen, new DizhiLiuchong(Dizhi.Yin).TheOther);
@@ -41,7 +44,10 @@ public class DizhiLiuchongTests
         Assert.AreEqual(Dizhi.Mao, new DizhiLiuchong(Dizhi.You).TheOther);
         Assert.AreEqual(Dizhi.Chen, new DizhiLiuchong(Dizhi.Xu).TheOther);
         Assert.AreEqual(Dizhi.Si, new DizhiLiuchong(Dizhi.Hai).TheOther);
-
+    }
+    [TestMethod()]
+    public void DizhiAfterZiTest()
+    {
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuchong(Dizhi.Zi).DizhiAfterZi);
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuchong(Dizhi.Chou).DizhiAfterZi);
         Assert.AreEqual(Dizhi.Yin, new DizhiLiuchong(Dizhi.Yin).DizhiAfterZi);
@@ -54,7 +60,11 @@ public class DizhiLiuchongTests
         Assert.AreEqual(Dizhi.Mao, new DizhiLiuchong(Dizhi.You).DizhiAfterZi);
         Assert.AreEqual(Dizhi.Chen, new DizhiLiuchong(Dizhi.Xu).DizhiAfterZi);
         Assert.AreEqual(Dizhi.Si, new DizhiLiuchong(Dizhi.Hai).DizhiAfterZi);
+    }
 
+    [TestMethod()]
+    public void DizhiAfterWuTest()
+    {
         Assert.AreEqual(Dizhi.Wu, new DizhiLiuchong(Dizhi.Zi).DizhiAfterWu);
         Assert.AreEqual(Dizhi.Wei, new DizhiLiuchong(Dizhi.Chou).DizhiAfterWu);
         Assert.AreEqual(Dizhi.Shen, new DizhiLiuchong(Dizhi.Yin).DizhiAfterWu);
@@ -67,7 +77,11 @@ public class DizhiLiuchongTests
         Assert.AreEqual(Dizhi.You, new DizhiLiuchong(Dizhi.You).DizhiAfterWu);
         Assert.AreEqual(Dizhi.Xu, new DizhiLiuchong(Dizhi.Xu).DizhiAfterWu);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuchong(Dizhi.Hai).DizhiAfterWu);
+    }
 
+    [TestMethod()]
+    public void DeterminantForSameAsTest()
+    {
         static Dizhi DeterminantForSameAs<T>(DizhiRelationBase<T> relation) where T : DizhiRelationBase<T>
         {
             var property = relation.GetType().GetProperty(

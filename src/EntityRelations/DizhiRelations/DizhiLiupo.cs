@@ -6,7 +6,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支六破关系。
 /// Liupo relation between Dizhis.
 /// </summary>
-public sealed class DizhiLiupo : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiLiupo : DizhiRelationBase<DizhiLiupo>
 {
     /// <summary>
     /// 此关系中属阴的地支。

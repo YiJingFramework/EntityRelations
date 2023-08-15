@@ -5,7 +5,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支三刑关系。
 /// Sanxing relation between Dizhis.
 /// </summary>
-public sealed class DizhiSanxing : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiSanxing : DizhiRelationBase<DizhiSanxing>
 {
     /// <summary>
     /// 此关系中的地支。
@@ -19,15 +19,15 @@ public sealed class DizhiSanxing : DizhiRelationBase<DizhiLiuhe>
     protected override Dizhi DeterminantForSameAs => this.Dizhis[0];
 
     /// <summary>
-    /// 刑当前地支的地支。
-    /// The Dizhi that Xings the current.
-    /// </summary>
-    public Dizhi ThePrevious { get; }
-    /// <summary>
     /// 被当前地支刑的地支。
     /// The Dizhi that be Xinged the current.
     /// </summary>
     public Dizhi TheNext { get; }
+    /// <summary>
+    /// 刑当前地支的地支。
+    /// The Dizhi that Xings the current.
+    /// </summary>
+    public Dizhi ThePrevious { get; }
 
     /// <summary>
     /// 创建一个此关系的示例。

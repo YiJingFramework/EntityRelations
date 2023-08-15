@@ -5,7 +5,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支六害（穿）关系。
 /// Liuhai (Liuchuan) relation between Dizhis.
 /// </summary>
-public sealed class DizhiLiuhai : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiLiuhai : DizhiRelationBase<DizhiLiuhai>
 {
     /// <summary>
     /// 此关系中位于辰（含）后的地支。

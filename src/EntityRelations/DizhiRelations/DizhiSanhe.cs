@@ -5,7 +5,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支三合关系。
 /// Sanhe relation between Dizhis.
 /// </summary>
-public sealed class DizhiSanhe : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiSanhe : DizhiRelationBase<DizhiSanhe>
 {
     /// <summary>
     /// 此关系中属于长生的地支。
@@ -28,14 +28,14 @@ public sealed class DizhiSanhe : DizhiRelationBase<DizhiLiuhe>
 
     /// <summary>
     /// 此关系中的当前地支的下一个地支。
-    /// The Dizhi in this relation next to the current.
+    /// The Dizhi in this relation after the current.
     /// </summary>
     public Dizhi TheNext { get; }
     /// <summary>
-    /// 此关系中除了当前地支和 <seealso cref="TheNext"/> 外剩下的地支。
-    /// The remaining Dizhi in this relation besides the current and <seealso cref="TheNext"/>.
+    /// 此关系中的当前地支的上一个地支。
+    /// The Dizhi in this relation before the current.
     /// </summary>
-    public Dizhi TheLast { get; }
+    public Dizhi ThePrevious { get; }
 
     /// <summary>
     /// 创建一个此关系的示例。
@@ -48,23 +48,23 @@ public sealed class DizhiSanhe : DizhiRelationBase<DizhiLiuhe>
     public DizhiSanhe(Dizhi theCurrent) : base(theCurrent)
     {
         this.TheNext = theCurrent.Next(4);
-        this.TheLast = theCurrent.Next(8);
+        this.ThePrevious = theCurrent.Next(8);
 
         switch (theCurrent.Index)
         {
             case 3 or 6 or 9 or 12:
                 this.DizhiOfZhangsheng = theCurrent;
                 this.DizhiOfDiwang = this.TheNext;
-                this.DizhiOfMu = this.TheLast;
+                this.DizhiOfMu = this.ThePrevious;
                 break;
             case 4 or 7 or 10 or 1:
-                this.DizhiOfZhangsheng = this.TheLast;
+                this.DizhiOfZhangsheng = this.ThePrevious;
                 this.DizhiOfDiwang = theCurrent;
                 this.DizhiOfMu = this.TheNext;
                 break;
             default:
                 this.DizhiOfZhangsheng = this.TheNext;
-                this.DizhiOfDiwang = this.TheLast;
+                this.DizhiOfDiwang = this.ThePrevious;
                 this.DizhiOfMu = theCurrent;
                 break;
         }

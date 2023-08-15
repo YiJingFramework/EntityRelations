@@ -5,7 +5,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支三会关系。
 /// Sanhui relation between Dizhis.
 /// </summary>
-public sealed class DizhiSanhui : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiSanhui : DizhiRelationBase<DizhiSanhui>
 {
     /// <summary>
     /// 此关系中属于孟的地支。

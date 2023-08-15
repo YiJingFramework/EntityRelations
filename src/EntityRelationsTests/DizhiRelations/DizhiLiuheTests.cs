@@ -14,7 +14,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations.Tests;
 public class DizhiLiuheTests
 {
     [TestMethod()]
-    public void DizhiLiuheTest()
+    public void TheCurrentTest()
     {
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuhe(Dizhi.Zi).TheCurrent);
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuhe(Dizhi.Chou).TheCurrent);
@@ -28,7 +28,10 @@ public class DizhiLiuheTests
         Assert.AreEqual(Dizhi.You, new DizhiLiuhe(Dizhi.You).TheCurrent);
         Assert.AreEqual(Dizhi.Xu, new DizhiLiuhe(Dizhi.Xu).TheCurrent);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuhe(Dizhi.Hai).TheCurrent);
-
+    }
+    [TestMethod()]
+    public void TheOtherTest()
+    {
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuhe(Dizhi.Zi).TheOther);
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuhe(Dizhi.Chou).TheOther);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuhe(Dizhi.Yin).TheOther);
@@ -41,7 +44,10 @@ public class DizhiLiuheTests
         Assert.AreEqual(Dizhi.Chen, new DizhiLiuhe(Dizhi.You).TheOther);
         Assert.AreEqual(Dizhi.Mao, new DizhiLiuhe(Dizhi.Xu).TheOther);
         Assert.AreEqual(Dizhi.Yin, new DizhiLiuhe(Dizhi.Hai).TheOther);
-
+    }
+    [TestMethod()]
+    public void DizhiAfterChouTest()
+    {
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuhe(Dizhi.Zi).DizhiAfterChou);
         Assert.AreEqual(Dizhi.Chou, new DizhiLiuhe(Dizhi.Chou).DizhiAfterChou);
         Assert.AreEqual(Dizhi.Yin, new DizhiLiuhe(Dizhi.Yin).DizhiAfterChou);
@@ -54,7 +60,10 @@ public class DizhiLiuheTests
         Assert.AreEqual(Dizhi.Chen, new DizhiLiuhe(Dizhi.You).DizhiAfterChou);
         Assert.AreEqual(Dizhi.Mao, new DizhiLiuhe(Dizhi.Xu).DizhiAfterChou);
         Assert.AreEqual(Dizhi.Yin, new DizhiLiuhe(Dizhi.Hai).DizhiAfterChou);
-
+    }
+    [TestMethod()]
+    public void DizhiAfterWeiTest()
+    {
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuhe(Dizhi.Zi).DizhiAfterWei);
         Assert.AreEqual(Dizhi.Zi, new DizhiLiuhe(Dizhi.Chou).DizhiAfterWei);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuhe(Dizhi.Yin).DizhiAfterWei);
@@ -67,7 +76,10 @@ public class DizhiLiuheTests
         Assert.AreEqual(Dizhi.You, new DizhiLiuhe(Dizhi.You).DizhiAfterWei);
         Assert.AreEqual(Dizhi.Xu, new DizhiLiuhe(Dizhi.Xu).DizhiAfterWei);
         Assert.AreEqual(Dizhi.Hai, new DizhiLiuhe(Dizhi.Hai).DizhiAfterWei);
-
+    }
+    [TestMethod()]
+    public void DeterminantForSameAsTest()
+    {
         static Dizhi DeterminantForSameAs<T>(DizhiRelationBase<T> relation) where T : DizhiRelationBase<T>
         {
             var property = relation.GetType().GetProperty(

@@ -5,7 +5,7 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 /// 地支六冲关系。
 /// Liuchong relation between Dizhis.
 /// </summary>
-public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuhe>
+public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuchong>
 {
     /// <summary>
     /// 此关系中位于子（含）后的地支。
