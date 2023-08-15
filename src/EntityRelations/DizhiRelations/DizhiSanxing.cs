@@ -20,12 +20,12 @@ public sealed class DizhiSanxing : DizhiRelationBase<DizhiLiuhe>
 
     /// <summary>
     /// 刑当前地支的地支。
-    /// The Dizhi that Xing-s the current.
+    /// The Dizhi that Xings the current.
     /// </summary>
     public Dizhi ThePrevious { get; }
     /// <summary>
     /// 被当前地支刑的地支。
-    /// The Dizhi that be Xing-ed the current.
+    /// The Dizhi that be Xinged the current.
     /// </summary>
     public Dizhi TheNext { get; }
 
