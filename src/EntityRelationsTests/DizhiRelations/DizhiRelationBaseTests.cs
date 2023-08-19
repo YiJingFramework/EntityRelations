@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.DizhiRelations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.DizhiRelations.Tests;

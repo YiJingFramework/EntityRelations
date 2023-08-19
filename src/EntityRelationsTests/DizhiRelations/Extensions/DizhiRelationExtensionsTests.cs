@@ -1,10 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.DizhiRelations.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.DizhiRelations.Extensions.Tests;
@@ -15,7 +9,7 @@ public class DizhiRelationExtensionsTests
     [TestMethod()]
     public void LiuchongRelationTest()
     {
-        for(int i = 0; i < 100; i++)
+        for (int i = 0; i < 100; i++)
         {
             var r = new Dizhi(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuchong(r), r.LiuchongRelation());

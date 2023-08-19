@@ -47,7 +47,7 @@ public sealed class TianganSichong : TianganRelationBase<TianganSichong>
             this.TianganAfterJia = theCurrent;
             this.TianganAfterGeng = this.TheOther;
         }
-        else if(theCurrent.Index >= 7)
+        else if (theCurrent.Index >= 7)
         {
             this.TheOther = theCurrent.Next(-1 - 5);
             this.TianganAfterJia = this.TheOther;
