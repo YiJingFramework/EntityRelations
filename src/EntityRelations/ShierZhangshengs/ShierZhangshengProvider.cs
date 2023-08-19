@@ -45,10 +45,10 @@ public sealed class ShierZhangshengProvider
     {
         get
         {
-            if (reverse)
-                return zhangsheng.Next(-(int)shierZhangsheng);
+            if (this.reverse)
+                return this.zhangsheng.Next(-(int)shierZhangsheng);
             else
-                return zhangsheng.Next((int)shierZhangsheng);
+                return this.zhangsheng.Next((int)shierZhangsheng);
         }
     }
 
@@ -69,10 +69,10 @@ public sealed class ShierZhangshengProvider
         get
         {
             int difference;
-            if (reverse)
-                difference = zhangsheng.Index - dizhi.Index;
+            if (this.reverse)
+                difference = this.zhangsheng.Index - dizhi.Index;
             else
-                difference = dizhi.Index - zhangsheng.Index;
+                difference = dizhi.Index - this.zhangsheng.Index;
             return (ShierZhangsheng)((difference + 12) % 12);
         }
     }
