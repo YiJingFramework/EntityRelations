@@ -28,7 +28,7 @@ public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuchong>
     public Dizhi TheOther { get; }
 
     /// <summary>
-    /// 创建一个此关系的示例。
+    /// 创建一个此关系的实例。
     /// Create an instance of this relation.
     /// </summary>
     /// <param name="theCurrent">

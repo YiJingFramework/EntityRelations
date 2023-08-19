@@ -30,7 +30,7 @@ public sealed class DizhiSanxing : DizhiRelationBase<DizhiSanxing>
     public Dizhi ThePrevious { get; }
 
     /// <summary>
-    /// 创建一个此关系的示例。
+    /// 创建一个此关系的实例。
     /// Create an instance of this relation.
     /// </summary>
     /// <param name="theCurrent">
