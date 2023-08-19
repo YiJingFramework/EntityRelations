@@ -28,7 +28,7 @@ public sealed class DizhiSanhui : DizhiRelationBase<DizhiSanhui>
 
     /// <summary>
     /// 此关系中的其他地支。
-    /// The Dizhis in this relation expect the current.
+    /// The other Dizhis in this relation except the current.
     /// </summary>
     public (Dizhi, Dizhi) TheOthers { get; }
 

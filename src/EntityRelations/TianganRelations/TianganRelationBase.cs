@@ -1,42 +1,42 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 
-namespace YiJingFramework.EntityRelations.DizhiRelations;
+namespace YiJingFramework.EntityRelations.TianganRelations;
 /// <summary>
-/// 所有地支关系的基类。
-/// The base class of all the Dizhi relations.
+/// 所有天干关系的基类。
+/// The base class of all the Tiangan relations.
 /// </summary>
 /// <typeparam name="TSelf">
 /// 类型自身。
 /// The type itself.
 /// </typeparam>
-public abstract class DizhiRelationBase<TSelf> :
+public abstract class TianganRelationBase<TSelf> :
     IEquatable<TSelf>, IComparable<TSelf>
-    where TSelf : DizhiRelationBase<TSelf>
+    where TSelf : TianganRelationBase<TSelf>
 {
     /// <summary>
-    /// 当前的地支。
-    /// The current Dizhi.
+    /// 当前的天干。
+    /// The current Tiangan.
     /// </summary>
-    public Dizhi TheCurrent { get; }
+    public Tiangan TheCurrent { get; }
 
     /// <summary>
-    /// 决定 <seealso cref="SameAs(TSelf?)"/> 结果的支。
+    /// 决定 <seealso cref="SameAs(TSelf?)"/> 结果的干。
     /// The determinant for <seealso cref="SameAs(TSelf?)"/>.
     /// </summary>
-    protected abstract Dizhi DeterminantForSameAs { get; }
+    protected abstract Tiangan DeterminantForSameAs { get; }
 
-    private protected DizhiRelationBase(Dizhi theCurrent)
+    private protected TianganRelationBase(Tiangan theCurrent)
     {
         this.TheCurrent = theCurrent;
     }
 
     /// <summary>
     /// 判断当前实例是否和另一个实例表示相同的关系。
-    /// 如子午相冲，在当前支分别为子和午时，
+    /// 如甲庚相合，在当前干分别为甲和庚时，
     /// <seealso cref="Equals(TSelf?)"/> 会返回 <c>false</c> ，而 <seealso cref="SameAs(TSelf?)"/> 返回 <c>true</c> 。
     /// Determine whether the current instance represents the same relation as the other.
-    /// Taking the Liuchong relation between Zi and Wu as an example,
-    /// when the current Dizhis are Zi and Wu respectively,
+    /// Taking the Wuhe relation between Jia and Geng as an example,
+    /// when the current Tiangans are Jia and Geng respectively,
     /// <seealso cref="Equals(TSelf?)"/> returns <c>false</c> and <seealso cref="SameAs(TSelf?)"/> returns <c>true</c>.
     /// </summary>
     /// <param name="other"></param>

@@ -8,12 +8,12 @@ namespace YiJingFramework.EntityRelations.DizhiRelations;
 public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuchong>
 {
     /// <summary>
-    /// 此关系中位于子（含）后的地支。
+    /// 此关系中位于子（含）之后的地支。
     /// The Dizhi after Zi (included) in this relation.
     /// </summary>
     public Dizhi DizhiAfterZi { get; }
     /// <summary>
-    /// 此关系中位于午（含）后的地支。
+    /// 此关系中位于午（含）之后的地支。
     /// The Dizhi after Wu (included) in this relation.
     /// </summary>
     public Dizhi DizhiAfterWu { get; }
@@ -23,7 +23,7 @@ public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuchong>
 
     /// <summary>
     /// 此关系中的另一个地支。
-    /// The other Dizhi in this relation expect the current.
+    /// The other Dizhi in this relation except the current.
     /// </summary>
     public Dizhi TheOther { get; }
 
