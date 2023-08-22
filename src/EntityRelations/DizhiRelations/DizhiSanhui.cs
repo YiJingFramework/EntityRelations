@@ -9,17 +9,17 @@ public sealed class DizhiSanhui : DizhiRelationBase<DizhiSanhui>
 {
     /// <summary>
     /// 此关系中属于孟的地支。
-    /// The Dizhi in this relation which is the Meng (Meng Zhong Ji).
+    /// The Dizhi in this relation which is the Meng (MengZhongJi).
     /// </summary>
     public Dizhi DizhiOfMeng { get; }
     /// <summary>
     /// 此关系中属于仲的地支。
-    /// The Dizhi in this relation which is the Zhong (Meng Zhong Ji).
+    /// The Dizhi in this relation which is the Zhong (MengZhongJi).
     /// </summary>
     public Dizhi DizhiOfZhong { get; }
     /// <summary>
     /// 此关系中属于季的地支。
-    /// The Dizhi in this relation which is the Ji (Meng Zhong Ji).
+    /// The Dizhi in this relation which is the Ji (MengZhongJi).
     /// </summary>
     public Dizhi DizhiOfJi { get; }
 

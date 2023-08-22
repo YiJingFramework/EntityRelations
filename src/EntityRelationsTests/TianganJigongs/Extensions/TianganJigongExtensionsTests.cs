@@ -1,14 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using YiJingFramework.EntityRelations.TianganJigongs.Extensions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using YiJingFramework.PrimitiveTypes;
-using YiJingFramework.EntityRelations.ShierZhangshengs.Extensions;
 using YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 using YiJingFramework.EntityRelations.ShierZhangshengs;
+using YiJingFramework.EntityRelations.ShierZhangshengs.Extensions;
+using YiJingFramework.PrimitiveTypes;
 
 namespace YiJingFramework.EntityRelations.TianganJigongs.Extensions.Tests;
 
