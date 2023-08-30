@@ -21,6 +21,6 @@ public static class DizhiMengZhongJiExtensions
     /// </returns>
     public static MengZhongJi MengZhongJi(this Dizhi dizhi)
     {
-        return (MengZhongJi)(dizhi.Index % 12 % 3);
+        return (MengZhongJi)((int)dizhi % 12 % 3);
     }
 }

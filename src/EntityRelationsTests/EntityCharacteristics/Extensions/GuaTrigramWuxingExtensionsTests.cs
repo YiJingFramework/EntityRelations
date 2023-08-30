@@ -24,14 +24,14 @@ public class GuaTrigramWuxingExtensionsTests
     {
         var wuxings = QianDuiLiZhenXunKanGenKun().Select((g) => g.Wuxing());
         Assert.IsTrue(wuxings.SequenceEqual(new[] {
-            Wuxing.Metal,
-            Wuxing.Metal,
-            Wuxing.Fire,
-            Wuxing.Wood,
-            Wuxing.Wood,
-            Wuxing.Water,
-            Wuxing.Earth,
-            Wuxing.Earth
+            Wuxing.Jin,
+            Wuxing.Jin,
+            Wuxing.Huo,
+            Wuxing.Mu,
+            Wuxing.Mu,
+            Wuxing.Shui,
+            Wuxing.Tu,
+            Wuxing.Tu
         }));
     }
 }

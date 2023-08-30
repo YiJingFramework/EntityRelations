@@ -15,14 +15,14 @@ public static class GuaTrigramWuxingExtensions
         Debug.Assert(guaHash is >= 0b1000 and <= 0b1111);
         return guaHash switch
         {
-            0b1_000 => PrimitiveTypes.Wuxing.Earth,
-            0b1_100 => PrimitiveTypes.Wuxing.Wood,
-            0b1_010 => PrimitiveTypes.Wuxing.Water,
-            0b1_110 => PrimitiveTypes.Wuxing.Metal,
-            0b1_001 => PrimitiveTypes.Wuxing.Earth,
-            0b1_101 => PrimitiveTypes.Wuxing.Fire,
-            0b1_011 => PrimitiveTypes.Wuxing.Wood,
-            _ => PrimitiveTypes.Wuxing.Metal, // 0b111
+            0b1_000 => PrimitiveTypes.Wuxing.Tu,
+            0b1_100 => PrimitiveTypes.Wuxing.Mu,
+            0b1_010 => PrimitiveTypes.Wuxing.Shui,
+            0b1_110 => PrimitiveTypes.Wuxing.Jin,
+            0b1_001 => PrimitiveTypes.Wuxing.Tu,
+            0b1_101 => PrimitiveTypes.Wuxing.Huo,
+            0b1_011 => PrimitiveTypes.Wuxing.Mu,
+            _ => PrimitiveTypes.Wuxing.Jin, // 0b111
         };
     }
 

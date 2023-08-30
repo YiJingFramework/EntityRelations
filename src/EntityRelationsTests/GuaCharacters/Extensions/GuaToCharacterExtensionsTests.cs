@@ -10,12 +10,12 @@ public class GuaToCharacterExtensionsTests
     [TestMethod()]
     public void ToUnicodeCharTest()
     {
-        Assert.AreEqual('⚊', new GuaWith1Line(Yinyang.Yang).ToUnicodeChar());
-        Assert.AreEqual('⚋', new GuaWith1Line(Yinyang.Yin).ToUnicodeChar());
-        Assert.AreEqual('⚌', new GuaWith2Lines(Yinyang.Yang, Yinyang.Yang).ToUnicodeChar());
-        Assert.AreEqual('⚍', new GuaWith2Lines(Yinyang.Yang, Yinyang.Yin).ToUnicodeChar());
-        Assert.AreEqual('⚎', new GuaWith2Lines(Yinyang.Yin, Yinyang.Yang).ToUnicodeChar());
-        Assert.AreEqual('⚏', new GuaWith2Lines(Yinyang.Yin, Yinyang.Yin).ToUnicodeChar());
+        Assert.AreEqual('⚊', new GuaWith1Yao(Yinyang.Yang).ToUnicodeChar());
+        Assert.AreEqual('⚋', new GuaWith1Yao(Yinyang.Yin).ToUnicodeChar());
+        Assert.AreEqual('⚌', new GuaWith2Yaos(Yinyang.Yang, Yinyang.Yang).ToUnicodeChar());
+        Assert.AreEqual('⚍', new GuaWith2Yaos(Yinyang.Yang, Yinyang.Yin).ToUnicodeChar());
+        Assert.AreEqual('⚎', new GuaWith2Yaos(Yinyang.Yin, Yinyang.Yang).ToUnicodeChar());
+        Assert.AreEqual('⚏', new GuaWith2Yaos(Yinyang.Yin, Yinyang.Yin).ToUnicodeChar());
 
         Assert.AreEqual('☴', GuaTrigram.Parse("011").ToUnicodeChar());
         Assert.AreEqual('☰', GuaTrigram.Parse("111").ToUnicodeChar());

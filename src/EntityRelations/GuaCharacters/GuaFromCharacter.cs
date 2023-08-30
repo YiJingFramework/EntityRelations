@@ -28,12 +28,12 @@ public static partial class GuaFromCharacter
     /// </returns>
     public static bool TryConvert(char value, [MaybeNullWhen(false)] out Gua result)
     {
-        if (TryConvert(value, out GuaWith1Line? gua1))
+        if (TryConvert(value, out GuaWith1Yao? gua1))
         {
             result = gua1.AsGua();
             return true;
         }
-        if (TryConvert(value, out GuaWith2Lines? gua2))
+        if (TryConvert(value, out GuaWith2Yaos? gua2))
         {
             result = gua2.AsGua();
             return true;
@@ -53,15 +53,15 @@ public static partial class GuaFromCharacter
     }
 
     /// <inheritdoc cref="TryConvert(char, out Gua)"/>
-    public static bool TryConvert(char value, [MaybeNullWhen(false)] out GuaWith1Line result)
+    public static bool TryConvert(char value, [MaybeNullWhen(false)] out GuaWith1Yao result)
     {
         switch (value)
         {
             case '\u268A':
-                result = new GuaWith1Line(Yinyang.Yang);
+                result = new(Yinyang.Yang);
                 return true;
             case '\u268B':
-                result = new GuaWith1Line(Yinyang.Yin);
+                result = new(Yinyang.Yin);
                 return true;
             default:
                 result = null;
@@ -70,21 +70,21 @@ public static partial class GuaFromCharacter
     }
 
     /// <inheritdoc cref="TryConvert(char, out Gua)"/>
-    public static bool TryConvert(char value, [MaybeNullWhen(false)] out GuaWith2Lines result)
+    public static bool TryConvert(char value, [MaybeNullWhen(false)] out GuaWith2Yaos result)
     {
         switch (value)
         {
             case '\u268C':
-                result = new GuaWith2Lines(Yinyang.Yang, Yinyang.Yang);
+                result = new(Yinyang.Yang, Yinyang.Yang);
                 return true;
             case '\u268D':
-                result = new GuaWith2Lines(Yinyang.Yang, Yinyang.Yin);
+                result = new(Yinyang.Yang, Yinyang.Yin);
                 return true;
             case '\u268E':
-                result = new GuaWith2Lines(Yinyang.Yin, Yinyang.Yang);
+                result = new(Yinyang.Yin, Yinyang.Yang);
                 return true;
             case '\u268F':
-                result = new GuaWith2Lines(Yinyang.Yin, Yinyang.Yin);
+                result = new(Yinyang.Yin, Yinyang.Yin);
                 return true;
             default:
                 result = null;

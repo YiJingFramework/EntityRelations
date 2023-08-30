@@ -26,8 +26,8 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(1);
             {
-                var cdd = gua.AsFixed<GuaWith1Line>().ToUnicodeChar();
-                var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith1Line? cddd);
+                var cdd = gua.AsFixed<GuaWith1Yao>().ToUnicodeChar();
+                var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith1Yao? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());
             }
@@ -43,8 +43,8 @@ public class GuaFromCharacterTests
         {
             var gua = GetRandomGua(2);
             {
-                var cdd = gua.AsFixed<GuaWith2Lines>().ToUnicodeChar();
-                var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith2Lines? cddd);
+                var cdd = gua.AsFixed<GuaWith2Yaos>().ToUnicodeChar();
+                var bl = GuaFromCharacter.TryConvert(cdd, out GuaWith2Yaos? cddd);
                 Assert.IsTrue(bl);
                 Assert.AreEqual(gua, cddd?.AsGua());
             }

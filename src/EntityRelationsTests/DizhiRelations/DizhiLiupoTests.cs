@@ -87,7 +87,7 @@ public class DizhiLiupoTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 12).Select(x => new Dizhi(x)).Select(x => new DizhiLiupo(x)))
+        foreach (var i in Enumerable.Range(1, 12).Select(x => (Dizhi)(x)).Select(x => new DizhiLiupo(x)))
         {
             Assert.AreEqual(i.DizhiOfYang, DeterminantForSameAs(i));
         }

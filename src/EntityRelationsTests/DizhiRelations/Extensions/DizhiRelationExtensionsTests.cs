@@ -11,7 +11,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuchong(r), r.LiuchongRelation());
         }
     }
@@ -21,7 +21,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuchong(r).TheOther, r.Liuchong());
         }
     }
@@ -31,7 +31,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuhai(r), r.LiuhaiRelation());
         }
     }
@@ -41,7 +41,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuhai(r).TheOther, r.Liuhai());
         }
     }
@@ -51,7 +51,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuhe(r), r.LiuheRelation());
         }
     }
@@ -61,7 +61,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiuhe(r).TheOther, r.Liuhe());
         }
     }
@@ -71,7 +71,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiupo(r), r.LiupoRelation());
         }
     }
@@ -81,7 +81,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiLiupo(r).TheOther, r.Liupo());
         }
     }
@@ -91,7 +91,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiSanhe(r), r.SanheRelation());
         }
     }
@@ -101,7 +101,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiSanhui(r), r.SanhuiRelation());
         }
     }
@@ -111,7 +111,7 @@ public class DizhiRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = new Dizhi(Random.Shared.Next(1, 13));
+            var r = (Dizhi)(Random.Shared.Next(1, 13));
             Assert.AreEqual(new DizhiSanxing(r), r.SanxingRelation());
         }
     }

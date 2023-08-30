@@ -42,7 +42,7 @@ public sealed class DizhiSanhui : DizhiRelationBase<DizhiSanhui>
     /// </param>
     public DizhiSanhui(Dizhi theCurrent) : base(theCurrent)
     {
-        switch (theCurrent.Index)
+        switch ((int)theCurrent)
         {
             case 3 or 6 or 9 or 12:
                 this.DizhiOfMeng = theCurrent;

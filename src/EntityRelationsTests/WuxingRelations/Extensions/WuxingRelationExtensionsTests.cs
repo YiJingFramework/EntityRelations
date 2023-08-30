@@ -9,27 +9,27 @@ public class WuxingRelationExtensionsTests
     [TestMethod()]
     public void GetRelationTest()
     {
-        Assert.AreEqual(WuxingRelation.GeneratedByMe,
-            Wuxing.Wood.GetRelation(Wuxing.Fire));
-        Assert.AreEqual(WuxingRelation.GeneratedByMe,
-            Wuxing.Fire.GetRelation(Wuxing.Earth));
-        Assert.AreEqual(WuxingRelation.GeneratedByMe,
-            Wuxing.Earth.GetRelation(Wuxing.Metal));
-        Assert.AreEqual(WuxingRelation.GeneratedByMe,
-            Wuxing.Metal.GetRelation(Wuxing.Water));
-        Assert.AreEqual(WuxingRelation.GeneratedByMe,
-            Wuxing.Water.GetRelation(Wuxing.Wood));
+        Assert.AreEqual(WuxingRelation.IsShengedByMe,
+            Wuxing.Mu.GetRelation(Wuxing.Huo));
+        Assert.AreEqual(WuxingRelation.IsShengedByMe,
+            Wuxing.Huo.GetRelation(Wuxing.Tu));
+        Assert.AreEqual(WuxingRelation.IsShengedByMe,
+            Wuxing.Tu.GetRelation(Wuxing.Jin));
+        Assert.AreEqual(WuxingRelation.IsShengedByMe,
+            Wuxing.Jin.GetRelation(Wuxing.Shui));
+        Assert.AreEqual(WuxingRelation.IsShengedByMe,
+            Wuxing.Shui.GetRelation(Wuxing.Mu));
 
-        Assert.AreEqual(WuxingRelation.GeneratingMe,
-            Wuxing.Wood.GetRelation(Wuxing.Water));
-        Assert.AreEqual(WuxingRelation.GeneratingMe,
-            Wuxing.Water.GetRelation(Wuxing.Metal));
-        Assert.AreEqual(WuxingRelation.GeneratingMe,
-            Wuxing.Metal.GetRelation(Wuxing.Earth));
-        Assert.AreEqual(WuxingRelation.GeneratingMe,
-            Wuxing.Earth.GetRelation(Wuxing.Fire));
-        Assert.AreEqual(WuxingRelation.GeneratingMe,
-            Wuxing.Fire.GetRelation(Wuxing.Wood));
+        Assert.AreEqual(WuxingRelation.ShengsMe,
+            Wuxing.Mu.GetRelation(Wuxing.Shui));
+        Assert.AreEqual(WuxingRelation.ShengsMe,
+            Wuxing.Shui.GetRelation(Wuxing.Jin));
+        Assert.AreEqual(WuxingRelation.ShengsMe,
+            Wuxing.Jin.GetRelation(Wuxing.Tu));
+        Assert.AreEqual(WuxingRelation.ShengsMe,
+            Wuxing.Tu.GetRelation(Wuxing.Huo));
+        Assert.AreEqual(WuxingRelation.ShengsMe,
+            Wuxing.Huo.GetRelation(Wuxing.Mu));
     }
 
     [TestMethod()]
@@ -38,28 +38,28 @@ public class WuxingRelationExtensionsTests
         for (int i = 0; i < 5; i++)
         {
             var woodP = (Wuxing)i;
-            var fireP = woodP.GetWuxing(WuxingRelation.GeneratedByMe);
-            var earthP = fireP.GetWuxing(WuxingRelation.GeneratedByMe);
-            var metalP = earthP.GetWuxing(WuxingRelation.GeneratedByMe);
-            var waterP = metalP.GetWuxing(WuxingRelation.GeneratedByMe);
+            var fireP = woodP.GetWuxing(WuxingRelation.IsShengedByMe);
+            var earthP = fireP.GetWuxing(WuxingRelation.IsShengedByMe);
+            var metalP = earthP.GetWuxing(WuxingRelation.IsShengedByMe);
+            var waterP = metalP.GetWuxing(WuxingRelation.IsShengedByMe);
 
-            Assert.AreEqual(WuxingRelation.GeneratedByMe,
+            Assert.AreEqual(WuxingRelation.IsShengedByMe,
                 woodP.GetRelation(fireP));
-            Assert.AreEqual(WuxingRelation.OvercameByMe,
+            Assert.AreEqual(WuxingRelation.IsKeedByMe,
                 woodP.GetRelation(earthP));
-            Assert.AreEqual(WuxingRelation.OvercomingMe,
+            Assert.AreEqual(WuxingRelation.KesMe,
                 woodP.GetRelation(metalP));
-            Assert.AreEqual(WuxingRelation.GeneratingMe,
+            Assert.AreEqual(WuxingRelation.ShengsMe,
                 woodP.GetRelation(waterP));
 
             Assert.AreEqual(fireP,
-                woodP.GetWuxing(WuxingRelation.GeneratedByMe));
+                woodP.GetWuxing(WuxingRelation.IsShengedByMe));
             Assert.AreEqual(earthP,
-                woodP.GetWuxing(WuxingRelation.OvercameByMe));
+                woodP.GetWuxing(WuxingRelation.IsKeedByMe));
             Assert.AreEqual(metalP,
-                woodP.GetWuxing(WuxingRelation.OvercomingMe));
+                woodP.GetWuxing(WuxingRelation.KesMe));
             Assert.AreEqual(waterP,
-                woodP.GetWuxing(WuxingRelation.GeneratingMe));
+                woodP.GetWuxing(WuxingRelation.ShengsMe));
         }
     }
 }

@@ -40,9 +40,9 @@ public static partial class GuaToCharacterExtensions
 
         int value = '\u2630';
         int d = 4;
-        foreach (var line in gua)
+        foreach (var yao in gua)
         {
-            if (!line.IsYang)
+            if (!yao.IsYang)
                 value += d;
             d = d / 2;
         }
@@ -50,7 +50,7 @@ public static partial class GuaToCharacterExtensions
     }
 
     /// <inheritdoc cref="ToUnicodeChar(GuaHexagram)" />
-    public static char ToUnicodeChar(this GuaWith2Lines gua)
+    public static char ToUnicodeChar(this GuaWith2Yaos gua)
     {
         ArgumentNullException.ThrowIfNull(gua);
 
@@ -60,7 +60,7 @@ public static partial class GuaToCharacterExtensions
     }
 
     /// <inheritdoc cref="ToUnicodeChar(GuaHexagram)" />
-    public static char ToUnicodeChar(this GuaWith1Line gua)
+    public static char ToUnicodeChar(this GuaWith1Yao gua)
     {
         ArgumentNullException.ThrowIfNull(gua);
 
@@ -78,8 +78,8 @@ public static partial class GuaToCharacterExtensions
 
         return gua.Count switch
         {
-            1 => ToUnicodeChar(gua.AsFixed<GuaWith1Line>()),
-            2 => ToUnicodeChar(gua.AsFixed<GuaWith2Lines>()),
+            1 => ToUnicodeChar(gua.AsFixed<GuaWith1Yao>()),
+            2 => ToUnicodeChar(gua.AsFixed<GuaWith2Yaos>()),
             3 => ToUnicodeChar(gua.AsFixed<GuaTrigram>()),
             6 => ToUnicodeChar(gua.AsFixed<GuaHexagram>()),
             _ => throw new ArgumentException(

@@ -123,7 +123,7 @@ public class DizhiSanheTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 12).Select(x => new Dizhi(x)).Select(x => new DizhiSanhe(x)))
+        foreach (var i in Enumerable.Range(1, 12).Select(x => (Dizhi)(x)).Select(x => new DizhiSanhe(x)))
         {
             Assert.AreEqual(i.DizhiOfDiwang, DeterminantForSameAs(i));
         }

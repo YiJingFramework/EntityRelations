@@ -1,4 +1,5 @@
-﻿using YiJingFramework.PrimitiveTypes;
+﻿using System.Collections.Immutable;
+using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount.Extensions;
 
@@ -10,20 +11,20 @@ namespace YiJingFramework.EntityRelations.GuaDerivations.Extensions;
 /// </summary>
 public static class GuaDerivationExtensions
 {
-    #region ChangeLines
+    #region ChangeYaos
     /// <summary>
     /// 改变卦中几爻，返回修改后的卦。
-    /// Reverse some lines in a Gua and returns the modified Gua.
+    /// Change some Yao-s in a Gua and returns the modified Gua.
     /// </summary>
     /// <param name="gua">
     /// 卦。
     /// The Gua.
     /// </param>
-    /// <param name="lineIndexes">
+    /// <param name="yaoIndexes">
     /// 要修改的爻。
-    /// 如果出现两次，将会翻转回来。
-    /// The lines to be reversed.
-    /// If a number appears twice, this line will be reversed back.
+    /// 如果出现两次，将会再转回原样。
+    /// The Yao-s to be changed.
+    /// If a number appears twice, this Yao will be changed back.
     /// </param>
     /// <param name="throwIfOutOfRange">
     /// 指示是否要在超出范围时抛出异常。
@@ -36,8 +37,8 @@ public static class GuaDerivationExtensions
     /// The result.
     /// </returns>
     /// <exception cref="ArgumentNullException">
-    /// <paramref name="gua"/> 或 <paramref name="lineIndexes"/> 为 <c>null</c> 。
-    /// <paramref name="gua"/> or <paramref name="lineIndexes"/> is <c>null</c>.
+    /// <paramref name="gua"/> 或 <paramref name="yaoIndexes"/> 为 <c>null</c> 。
+    /// <paramref name="gua"/> or <paramref name="yaoIndexes"/> is <c>null</c>.
     /// </exception>
     /// <exception cref="ArgumentOutOfRangeException">
     /// 若 <paramref name="throwIfOutOfRange"/> 为 <c>true</c> ，
@@ -45,81 +46,69 @@ public static class GuaDerivationExtensions
     /// If <paramref name="throwIfOutOfRange"/> is set to <c>true</c>, 
     /// this exception will occurs when one of the indexes is out of range.
     /// </exception>
-    public static Gua ChangeLines(
-        this Gua gua, IEnumerable<int> lineIndexes,
+    public static Gua ChangeYaos(
+        this Gua gua, IEnumerable<int> yaoIndexes,
         bool throwIfOutOfRange = true)
     {
         ArgumentNullException.ThrowIfNull(gua);
-        ArgumentNullException.ThrowIfNull(lineIndexes);
+        ArgumentNullException.ThrowIfNull(yaoIndexes);
 
-        var lines = new List<Yinyang>(gua);
-        foreach (var i in lineIndexes)
+        var result = ImmutableArray.CreateBuilder<Yinyang>(gua.Count);
+        result.AddRange(gua);
+        foreach (var i in yaoIndexes)
         {
-            if (i < 0 || i >= lines.Count)
+            if (i < 0 || i >= result.Count)
             {
                 if (throwIfOutOfRange)
-                    throw new ArgumentOutOfRangeException(nameof(lineIndexes));
+                    throw new ArgumentOutOfRangeException(nameof(yaoIndexes));
 
                 continue;
             }
 
-            lines[i] = !lines[i];
+            result[i] = !result[i];
         }
-        return new(lines);
+        return new(result.MoveToImmutable());
     }
 
-    /// <inheritdoc cref="ChangeLines(Gua, IEnumerable{int}, bool)"/>
-    public static TGua ChangeLines<TGua>(
-        this TGua gua, IEnumerable<int> lineIndexes,
+    /// <typeparam name="TGua">
+    /// 卦的类型。
+    /// Type of Gua.
+    /// </typeparam>
+    /// <inheritdoc cref="ChangeYaos(Gua, IEnumerable{int}, bool)"/>
+    public static TGua ChangeYaos<TGua>(
+        this TGua gua, IEnumerable<int> yaoIndexes,
         bool throwIfOutOfRange = true)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.ChangeLines(lineIndexes, throwIfOutOfRange).AsFixed<TGua>();
+        return (gua?.AsGua())!.ChangeYaos(yaoIndexes, throwIfOutOfRange).AsFixed<TGua>();
     }
 
-    /// <summary>
-    /// 改变卦中几爻，返回修改后的卦。
-    /// Reverse some lines in a Gua and returns the modified Gua.
-    /// </summary>
-    /// <param name="gua">
-    /// 卦。
-    /// The Gua.
-    /// </param>
-    /// <param name="lineIndexes">
-    /// 要修改的爻。
-    /// 如果出现两次，将会翻转回来。
-    /// The lines to reverse.
-    /// If a number appears twice, this line will be reversed back.
-    /// </param>
-    /// <returns>
-    /// 结果。
-    /// The result.
-    /// </returns>
-    /// <exception cref="ArgumentNullException">
-    /// <paramref name="gua"/> 或 <paramref name="lineIndexes"/> 为 <c>null</c> 。
-    /// <paramref name="gua"/> or <paramref name="lineIndexes"/> is <c>null</c>.
-    /// </exception>
     /// <exception cref="ArgumentOutOfRangeException">
     /// 索引超出范围。
     /// One of the indexes is out of range.
     /// </exception>
-    public static Gua ChangeLines(this Gua gua, params int[] lineIndexes)
+    /// <inheritdoc cref="ChangeYaos(Gua, IEnumerable{int}, bool)"/>
+    public static Gua ChangeYaos(this Gua gua, params int[] yaoIndexes)
     {
-        return gua.ChangeLines(lineIndexes, true);
+        return gua.ChangeYaos(yaoIndexes, true);
     }
 
-    /// <inheritdoc cref="ChangeLines(Gua, int[])"/>
-    public static TGua ChangeLines<TGua>(this TGua gua, params int[] lineIndexes)
+    /// <typeparam name="TGua">
+    /// 卦的类型。
+    /// Type of Gua.
+    /// </typeparam>
+    /// <inheritdoc cref="ChangeYaos(Gua, int[])"/>
+    public static TGua ChangeYaos<TGua>(this TGua gua, params int[] yaoIndexes)
         where TGua : notnull, IGuaWithFixedCount<TGua>
     {
-        return (gua?.AsGua())!.ChangeLines(lineIndexes, true).AsFixed<TGua>();
+        return (gua?.AsGua())!.ChangeYaos(yaoIndexes, true).AsFixed<TGua>();
     }
     #endregion
 
     #region Cuogua
     /// <summary>
-    /// 获取错卦。
-    /// Get a Gua's Cuogua (reverse all the lines).
+    /// 获取错卦（改变所有的爻）。
+    /// Get a Gua's Cuogua (change all the Yao-s).
     /// </summary>
     /// <param name="gua">
     /// 本卦。
@@ -137,9 +126,13 @@ public static class GuaDerivationExtensions
     {
         ArgumentNullException.ThrowIfNull(gua);
 
-        return new Gua(gua.Select(line => !line));
+        return new Gua(gua.Select(yao => !yao));
     }
 
+    /// <typeparam name="TGua">
+    /// 卦的类型。
+    /// Type of Gua.
+    /// </typeparam>
     /// <inheritdoc cref="Cuogua(Gua)" />
     public static TGua Cuogua<TGua>(this TGua gua)
         where TGua : notnull, IGuaWithFixedCount<TGua>
@@ -150,8 +143,8 @@ public static class GuaDerivationExtensions
 
     #region Zonggua
     /// <summary>
-    /// 获取综卦。
-    /// Get a Gua's Zonggua (reverse the order of the lines).
+    /// 获取综卦（翻转爻的顺序）。
+    /// Get a Gua's Zonggua (reverse the order of the Yaos).
     /// </summary>
     /// <param name="gua">
     /// 本卦。
@@ -177,6 +170,10 @@ public static class GuaDerivationExtensions
         return new Gua(ReverseOrder(gua));
     }
 
+    /// <typeparam name="TGua">
+    /// 卦的类型。
+    /// Type of Gua.
+    /// </typeparam>
     /// <inheritdoc cref="Zonggua(Gua)" />
     public static TGua Zonggua<TGua>(this TGua gua)
         where TGua : notnull, IGuaWithFixedCount<TGua>
@@ -187,11 +184,11 @@ public static class GuaDerivationExtensions
 
     #region Hugua
     /// <summary>
-    /// 获取互卦。
+    /// 获取互卦（由第二（ <c>[1]</c> ）三四爻和三四五爻组成新的卦）。
     /// Get a Gua's Hugua.
     /// (The Huguas will made up with -- 
-    /// the 2nd (<c>[1]</c>) line, the 3rd (<c>[2]</c>) line, the 4th line,
-    /// then the 3rd line again, the 4th line and the 5th line
+    /// the 2nd (<c>[1]</c>) Yao, the 3rd Yao, the 4th Yao,
+    /// then the 3rd Yao again, the 4th Yao and the 5th Yao
     /// -- of the original hexagram.)
     /// </summary>
     /// <param name="gua">
@@ -216,7 +213,7 @@ public static class GuaDerivationExtensions
 
     #region Jiaogua
     /// <summary>
-    /// 获取交卦。
+    /// 获取交卦（交换上下的八卦）。
     /// Get a Gua's Jiaogua (swap the upper GuaTrigram and the lower GuaTrigram).
     /// </summary>
     /// <param name="gua">
@@ -251,7 +248,7 @@ public static class GuaDerivationExtensions
     /// <param name="pieceLength">
     /// 拆开后每一卦的爻数。
     /// 如果除不尽，则最后一卦可能爻数不一致。
-    /// The line count of each smaller Guas.
+    /// The Yao count of each smaller Guas.
     /// If it cannot be completely divided, the last one may not be this value.
     /// </param>
     /// <returns>
@@ -296,11 +293,55 @@ public static class GuaDerivationExtensions
         }
     }
 
-    /// <inheritdoc cref="Split(Gua, int)" />
-    public static IEnumerable<Gua> Split<TGua>(this TGua gua, int pieceLength)
-        where TGua : notnull, IGuaWithFixedCount<TGua>
+    /// <summary>
+    /// 拆分一个卦为更小的多个卦。
+    /// Split a Gua to smaller Guas.
+    /// </summary>
+    /// <typeparam name="TGuaOut">
+    /// 拆开后卦的类型。
+    /// Type of the result Guas.
+    /// </typeparam>
+    /// <param name="gua">
+    /// 卦。
+    /// The Gua.
+    /// </param>
+    /// <param name="theRest">
+    /// 余下的部分。
+    /// The result part.
+    /// </param>
+    /// <returns>
+    /// 结果。
+    /// The result.
+    /// </returns>
+    /// <exception cref="ArgumentNullException">
+    /// <paramref name="gua"/> 为 <c>null</c> 。
+    /// <paramref name="gua"/> is <c>null</c>.
+    /// </exception>
+    /// <exception cref="InvalidOperationException">
+    /// <typeparamref name="TGuaOut"/> 期望的爻数不大于 <c>0</c> 。
+    /// <typeparamref name="TGuaOut"/>'s expected count is not greater than <c>0</c>.
+    /// </exception>
+    public static IEnumerable<TGuaOut> Split<TGuaOut>(this Gua gua, out Gua theRest)
+        where TGuaOut : notnull, IGuaWithFixedCount<TGuaOut>
     {
-        return (gua?.AsGua())!.Split(pieceLength);
+        ArgumentNullException.ThrowIfNull(gua);
+
+        var expectedCount = TGuaOut.ExpectedCount;
+        if (TGuaOut.ExpectedCount <= 0)
+            throw new InvalidOperationException(
+                $"{nameof(TGuaOut)}.{nameof(TGuaOut.ExpectedCount)} should be greater than zero.");
+
+        var result = gua.Split(TGuaOut.ExpectedCount).ToArray();
+        if (gua.Count % expectedCount is 0)
+        {
+            theRest = new Gua();
+            return result.Select(x => x.AsFixed<TGuaOut>());
+        }
+        else
+        {
+            theRest = result[^1];
+            return result.SkipLast(1).Select(x => x.AsFixed<TGuaOut>());
+        }
     }
     #endregion
 }

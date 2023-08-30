@@ -79,7 +79,7 @@ public class TianganSichongTests
             }
             return result;
         }
-        var tiangans = new[] { 1, 2, 3, 4, 7, 8, 9, 10 }.Select(x => new Tiangan(x));
+        var tiangans = new[] { 1, 2, 3, 4, 7, 8, 9, 10 }.Select(x => (Tiangan)(x));
         foreach (var i in tiangans.Select(x => new TianganSichong(x)))
         {
             Assert.AreEqual(i.TianganAfterJia, DeterminantForSameAs(i));

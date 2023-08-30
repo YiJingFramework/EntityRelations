@@ -25,16 +25,16 @@ public class WuxingShierZhangshengExtensionsTests
                 Assert.AreEqual(provider1[d], provider2[d]);
         }
 
-        AssertSameProvider(new(Dizhi.Hai, false), Wuxing.Wood.ShierZhangsheng());
-        AssertSameProvider(new(Dizhi.Yin, false), Wuxing.Fire.ShierZhangsheng());
-        AssertSameProvider(new(Dizhi.Si, false), Wuxing.Metal.ShierZhangsheng());
-        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Water.ShierZhangsheng());
+        AssertSameProvider(new(Dizhi.Hai, false), Wuxing.Mu.ShierZhangsheng());
+        AssertSameProvider(new(Dizhi.Yin, false), Wuxing.Huo.ShierZhangsheng());
+        AssertSameProvider(new(Dizhi.Si, false), Wuxing.Jin.ShierZhangsheng());
+        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Shui.ShierZhangsheng());
 
-        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Earth.ShierZhangsheng());
-        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Earth.ShierZhangsheng(true));
-        AssertSameProvider(new(Dizhi.Yin, false), Wuxing.Earth.ShierZhangsheng(false));
+        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Tu.ShierZhangsheng());
+        AssertSameProvider(new(Dizhi.Shen, false), Wuxing.Tu.ShierZhangsheng(true));
+        AssertSameProvider(new(Dizhi.Yin, false), Wuxing.Tu.ShierZhangsheng(false));
 
-        foreach (var t in AddRepeatedly(Wuxing.Wood, 1).Take(5))
+        foreach (var t in AddRepeatedly(Wuxing.Mu, 1).Take(5))
         {
             {
                 var provider = t.ShierZhangsheng();

@@ -18,10 +18,10 @@ public static class WuxingRelationToStringConversions
             return relationship switch
             {
                 WuxingRelation.SameAsMe => "同我",
-                WuxingRelation.GeneratingMe => "生我",
-                WuxingRelation.GeneratedByMe => "我生",
-                WuxingRelation.OvercameByMe => "我克",
-                WuxingRelation.OvercomingMe => "克我",
+                WuxingRelation.ShengsMe => "生我",
+                WuxingRelation.IsShengedByMe => "我生",
+                WuxingRelation.IsKeedByMe => "我克",
+                WuxingRelation.KesMe => "克我",
                 _ => relationship.ToString()
             };
         };
@@ -36,10 +36,10 @@ public static class WuxingRelationToStringConversions
             return relationship switch
             {
                 WuxingRelation.SameAsMe => "Peer",
-                WuxingRelation.GeneratingMe => "Parent",
-                WuxingRelation.GeneratedByMe => "Offspring",
-                WuxingRelation.OvercameByMe => "Wife&Wealth",
-                WuxingRelation.OvercomingMe => "Superior&Spirit",
+                WuxingRelation.ShengsMe => "Parent",
+                WuxingRelation.IsShengedByMe => "Offspring",
+                WuxingRelation.IsKeedByMe => "Wife&Wealth",
+                WuxingRelation.KesMe => "Superior&Spirit",
                 _ => relationship.ToString()
             };
         };
@@ -54,10 +54,10 @@ public static class WuxingRelationToStringConversions
             return relationship switch
             {
                 WuxingRelation.SameAsMe => "兄弟",
-                WuxingRelation.GeneratingMe => "父母",
-                WuxingRelation.GeneratedByMe => "子孙",
-                WuxingRelation.OvercameByMe => "妻财",
-                WuxingRelation.OvercomingMe => "官鬼",
+                WuxingRelation.ShengsMe => "父母",
+                WuxingRelation.IsShengedByMe => "子孙",
+                WuxingRelation.IsKeedByMe => "妻财",
+                WuxingRelation.KesMe => "官鬼",
                 _ => relationship.ToString()
             };
         };

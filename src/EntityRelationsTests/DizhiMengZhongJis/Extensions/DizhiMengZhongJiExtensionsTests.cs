@@ -12,7 +12,7 @@ public class DizhiMengZhongJiExtensionsTests
     {
         for (int i = 1; i <= 12; i++)
         {
-            var dizhi = new Dizhi(i);
+            var dizhi = (Dizhi)(i);
             switch (dizhi.MengZhongJi())
             {
                 case MengZhongJi.Meng:
