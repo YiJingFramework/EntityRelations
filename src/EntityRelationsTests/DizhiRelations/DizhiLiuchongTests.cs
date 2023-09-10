@@ -88,7 +88,7 @@ public class DizhiLiuchongTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 12).Select(x => (Dizhi)(x)).Select(x => new DizhiLiuchong(x)))
+        foreach (var i in Enumerable.Range(1, 12).Select(Dizhi.FromIndex).Select(x => new DizhiLiuchong(x)))
         {
             Assert.AreEqual(i.DizhiAfterZi, DeterminantForSameAs(i));
         }

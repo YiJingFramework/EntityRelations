@@ -22,7 +22,7 @@ public static class TianganDizhiWuxingExtensions
     /// </returns>
     public static Wuxing Wuxing(this Tiangan tiangan)
     {
-        return (Wuxing)(((int)tiangan - 1) / 2);
+        return (Wuxing)((tiangan.Index - 1) / 2);
     }
 
     /// <summary>
@@ -39,7 +39,7 @@ public static class TianganDizhiWuxingExtensions
     /// </returns>
     public static Wuxing Wuxing(this Dizhi dizhi)
     {
-        return (int)dizhi switch
+        return dizhi.Index switch
         {
             1 => PrimitiveTypes.Wuxing.Shui, // 子
             2 => PrimitiveTypes.Wuxing.Tu, // 丑

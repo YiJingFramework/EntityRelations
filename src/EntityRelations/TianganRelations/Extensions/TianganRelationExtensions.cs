@@ -21,7 +21,7 @@ public static class TianganRelationExtensions
     /// </returns>
     public static TianganSichong? SichongRelation(this Tiangan tiangan)
     {
-        if ((int)tiangan is 5 or 6)
+        if (tiangan.Index is 5 or 6)
             return null;
         return new(tiangan);
     }
@@ -40,7 +40,7 @@ public static class TianganRelationExtensions
     /// </returns>
     public static Tiangan? Sichong(this Tiangan tiangan)
     {
-        return (int)tiangan switch
+        return tiangan.Index switch
         {
             < 5 => tiangan.Next(5 + 1),
             >= 7 => tiangan.Next(-1 - 5),

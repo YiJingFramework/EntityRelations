@@ -25,17 +25,17 @@ public class DizhiToStringConversionsTests
         Assert.AreEqual("猪", Dizhi.Hai.ToString(conversion));
 
         conversion = DizhiToStringConversions.ShengxiaoInEnglish;
-        Assert.AreEqual("Rat", ((Dizhi)1).ToString(conversion));
-        Assert.AreEqual("Cow", ((Dizhi)2).ToString(conversion));
-        Assert.AreEqual("Tiger", ((Dizhi)3).ToString(conversion));
-        Assert.AreEqual("Rabbit", ((Dizhi)4).ToString(conversion));
-        Assert.AreEqual("Long", ((Dizhi)5).ToString(conversion));
-        Assert.AreEqual("Snake", ((Dizhi)6).ToString(conversion));
-        Assert.AreEqual("Horse", ((Dizhi)7).ToString(conversion));
-        Assert.AreEqual("Sheep", ((Dizhi)8).ToString(conversion));
-        Assert.AreEqual("Monkey", ((Dizhi)9).ToString(conversion));
-        Assert.AreEqual("Chicken", ((Dizhi)10).ToString(conversion));
-        Assert.AreEqual("Dog", ((Dizhi)11).ToString(conversion));
-        Assert.AreEqual("Pig", ((Dizhi)12).ToString(conversion));
+        Assert.AreEqual("Rat", Dizhi.Zi.ToString(conversion));
+        Assert.AreEqual("Cow", Dizhi.Chou.ToString(conversion));
+        Assert.AreEqual("Tiger", Dizhi.Yin.ToString(conversion));
+        Assert.AreEqual("Rabbit", Dizhi.Mao.ToString(conversion));
+        Assert.AreEqual("Long", Dizhi.Chen.ToString(conversion));
+        Assert.AreEqual("Snake", Dizhi.Si.ToString(conversion));
+        Assert.AreEqual("Horse", Dizhi.Wu.ToString(conversion));
+        Assert.AreEqual("Sheep", Dizhi.Wei.ToString(conversion));
+        Assert.AreEqual("Monkey", Dizhi.Shen.ToString(conversion));
+        Assert.AreEqual("Chicken", Dizhi.You.ToString(conversion));
+        Assert.AreEqual("Dog", Dizhi.Xu.ToString(conversion));
+        Assert.AreEqual("Pig", Dizhi.Hai.ToString(conversion));
     }
 }

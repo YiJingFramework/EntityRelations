@@ -91,7 +91,7 @@ public class DizhiLiuhaiTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 12).Select(x => (Dizhi)(x)).Select(x => new DizhiLiuhai(x)))
+        foreach (var i in Enumerable.Range(1, 12).Select(Dizhi.FromIndex).Select(x => new DizhiLiuhai(x)))
         {
             Assert.AreEqual(i.DizhiAfterChen, DeterminantForSameAs(i));
         }

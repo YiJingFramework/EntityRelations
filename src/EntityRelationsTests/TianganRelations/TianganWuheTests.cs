@@ -83,7 +83,7 @@ public class TianganWuheTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 10).Select(x => (Tiangan)(x)).Select(x => new TianganWuhe(x)))
+        foreach (var i in Enumerable.Range(1, 10).Select(Tiangan.FromIndex).Select(x => new TianganWuhe(x)))
         {
             Assert.AreEqual(i.TianganAfterJia, DeterminantForSameAs(i));
         }

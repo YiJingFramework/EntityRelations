@@ -50,7 +50,7 @@ public sealed class DizhiSanhe : DizhiRelationBase<DizhiSanhe>
         this.TheNext = theCurrent.Next(4);
         this.ThePrevious = theCurrent.Next(8);
 
-        switch ((int)theCurrent)
+        switch (theCurrent.Index)
         {
             case 3 or 6 or 9 or 12:
                 this.DizhiOfZhangsheng = theCurrent;

@@ -39,7 +39,7 @@ public sealed class TianganWuhe : TianganRelationBase<TianganWuhe>
     {
         this.TheOther = theCurrent.Next(5);
 
-        if ((int)theCurrent < 6)
+        if (theCurrent.Index < 6)
         {
             this.TianganAfterJia = theCurrent;
             this.TianganAfterJi = this.TheOther;

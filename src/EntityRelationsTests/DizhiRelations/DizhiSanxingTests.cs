@@ -105,7 +105,7 @@ public class DizhiSanxingTests
             }
             return result;
         }
-        foreach (var i in Enumerable.Range(1, 12).Select(x => (Dizhi)(x)).Select(x => new DizhiSanxing(x)))
+        foreach (var i in Enumerable.Range(1, 12).Select(Dizhi.FromIndex).Select(x => new DizhiSanxing(x)))
         {
             Assert.AreEqual(i.Dizhis[0], DeterminantForSameAs(i));
         }

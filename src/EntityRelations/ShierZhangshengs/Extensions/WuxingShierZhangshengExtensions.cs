@@ -105,7 +105,7 @@ public static class WuxingShierZhangshengExtensions
         bool earthFollowsWaterOrFire = true)
     {
         var zhangsheng = GetZhangsheng(wuxing, earthFollowsWaterOrFire);
-        int difference = (int)dizhi - (int)zhangsheng;
+        int difference = dizhi.Index - zhangsheng.Index;
         return (ShierZhangsheng)((difference + 12) % 12);
     }
 }

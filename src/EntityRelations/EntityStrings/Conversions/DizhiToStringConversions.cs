@@ -17,7 +17,7 @@ public static class DizhiToStringConversions
     public static EntityToStringConversion<Dizhi> Shengxiao { get; }
         = (dizhi) =>
         {
-            return (int)dizhi switch
+            return dizhi.Index switch
             {
                 1 => "鼠",
                 2 => "牛",
@@ -43,7 +43,7 @@ public static class DizhiToStringConversions
     public static EntityToStringConversion<Dizhi> ShengxiaoInEnglish { get; }
         = (dizhi) =>
         {
-            return (int)dizhi switch
+            return dizhi.Index switch
             {
                 1 => "Rat",
                 2 => "Cow",

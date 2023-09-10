@@ -14,7 +14,7 @@ public class TianganJigongExtensionsTests
     {
         for (int i = 1; i <= 10; i++)
         {
-            var tiangan = (Tiangan)(i);
+            var tiangan = Tiangan.FromIndex(i);
             if (tiangan.Yinyang().IsYang)
             {
                 Assert.AreEqual(tiangan.ShierZhangsheng(ShierZhangsheng.Linguan), tiangan.Jigong());

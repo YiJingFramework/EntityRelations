@@ -39,7 +39,7 @@ public sealed class DizhiSanxing : DizhiRelationBase<DizhiSanxing>
     /// </param>
     public DizhiSanxing(Dizhi theCurrent) : base(theCurrent)
     {
-        switch ((int)theCurrent)
+        switch (theCurrent.Index)
         {
             case 1:
                 this.Dizhis = Array.AsReadOnly(new[] { Dizhi.Zi, Dizhi.Mao });

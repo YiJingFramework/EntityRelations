@@ -11,7 +11,7 @@ public class TianganRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = (Tiangan)(Random.Shared.Next(1, 11));
+            var r = Tiangan.FromIndex(Random.Shared.Next(1, 11));
             try
             {
                 Assert.AreEqual(new TianganSichong(r), r.SichongRelation());
@@ -28,7 +28,7 @@ public class TianganRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = (Tiangan)(Random.Shared.Next(1, 11));
+            var r = Tiangan.FromIndex(Random.Shared.Next(1, 11));
             try
             {
                 Assert.AreEqual(new TianganSichong(r).TheOther, r.Sichong());
@@ -45,7 +45,7 @@ public class TianganRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = (Tiangan)(Random.Shared.Next(1, 11));
+            var r = Tiangan.FromIndex(Random.Shared.Next(1, 11));
             Assert.AreEqual(new TianganWuhe(r), r.WuheRelation());
         }
     }
@@ -55,7 +55,7 @@ public class TianganRelationExtensionsTests
     {
         for (int i = 0; i < 100; i++)
         {
-            var r = (Tiangan)(Random.Shared.Next(1, 11));
+            var r = Tiangan.FromIndex(Random.Shared.Next(1, 11));
             Assert.AreEqual(new TianganWuhe(r).TheOther, r.Wuhe());
         }
     }
