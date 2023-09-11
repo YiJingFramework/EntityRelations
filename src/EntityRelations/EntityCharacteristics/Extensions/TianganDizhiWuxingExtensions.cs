@@ -1,4 +1,5 @@
 ﻿using YiJingFramework.PrimitiveTypes;
+using YiJingFramework.PrimitiveTypes.GanzhiCombinations;
 
 namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions;
 
@@ -54,5 +55,24 @@ public static class TianganDizhiWuxingExtensions
             11 => PrimitiveTypes.Wuxing.Tu, // 戌
             _ => PrimitiveTypes.Wuxing.Shui, // 亥
         };
+    }
+
+    /// <summary>
+    /// 获取天干或地支的五行。
+    /// Get the Wuxing attribute of a Tiangan or Dizhi.
+    /// </summary>
+    /// <param name="tianganOrDizhi">
+    /// 天干或地支。
+    /// The Tiangan or Dizhi.
+    /// </param>
+    /// <returns>
+    /// 五行。
+    /// The Wuxing.
+    /// </returns>
+    public static Wuxing Wuxing(this TianganOrDizhi tianganOrDizhi)
+    {
+        if (tianganOrDizhi.TryAsTiangan(out var tiangan, out var dizhi))
+            return tiangan.Wuxing();
+        return dizhi.Wuxing();
     }
 }

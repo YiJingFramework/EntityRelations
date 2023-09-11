@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using YiJingFramework.PrimitiveTypes;
+using YiJingFramework.PrimitiveTypes.GanzhiCombinations;
 
 namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions.Tests;
 
@@ -36,5 +37,20 @@ public class TianganDizhiWuxingExtensionsTests
         Assert.AreEqual(Wuxing.Jin, Dizhi.You.Wuxing());
         Assert.AreEqual(Wuxing.Tu, Dizhi.Xu.Wuxing());
         Assert.AreEqual(Wuxing.Shui, Dizhi.Hai.Wuxing());
+    }
+
+    [TestMethod()]
+    public void WuxingTest2()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            var tiangan = (Tiangan)i;
+            Assert.AreEqual(tiangan.Wuxing(), new TianganOrDizhi(tiangan).Wuxing());
+        }
+        for (int i = 0; i < 12; i++)
+        {
+            var dizhi = (Dizhi)i;
+            Assert.AreEqual(dizhi.Wuxing(), new TianganOrDizhi(dizhi).Wuxing());
+        }
     }
 }

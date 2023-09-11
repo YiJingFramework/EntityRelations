@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using YiJingFramework.PrimitiveTypes;
+using YiJingFramework.PrimitiveTypes.GanzhiCombinations;
 
 namespace YiJingFramework.EntityRelations.EntityCharacteristics.Extensions.Tests;
 
@@ -22,7 +23,7 @@ public class TianganDizhiYinyangExtensionsTests
     }
 
     [TestMethod()]
-    public void YinyangTest2()
+    public void YinyangTest1()
     {
         Assert.AreEqual(Yinyang.Yang, Dizhi.Zi.Yinyang());
         Assert.AreEqual(Yinyang.Yin, Dizhi.Chou.Yinyang());
@@ -36,5 +37,31 @@ public class TianganDizhiYinyangExtensionsTests
         Assert.AreEqual(Yinyang.Yin, Dizhi.You.Yinyang());
         Assert.AreEqual(Yinyang.Yang, Dizhi.Xu.Yinyang());
         Assert.AreEqual(Yinyang.Yin, Dizhi.Hai.Yinyang());
+    }
+
+    [TestMethod()]
+    public void YinyangTest2()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            var tiangan = (Tiangan)i;
+            Assert.AreEqual(tiangan.Yinyang(), new TianganOrDizhi(tiangan).Yinyang());
+        }
+        for (int i = 0; i < 12; i++)
+        {
+            var dizhi = (Dizhi)i;
+            Assert.AreEqual(dizhi.Yinyang(), new TianganOrDizhi(dizhi).Yinyang());
+        }
+    }
+
+    [TestMethod()]
+    public void YinyangTest3()
+    {
+        for (int i = 0; i < 60; i++)
+        {
+            var ganzhi = Ganzhi.FromIndex(i);
+            Assert.AreEqual(ganzhi.Tiangan.Yinyang(), ganzhi.Yinyang());
+            Assert.AreEqual(ganzhi.Dizhi.Yinyang(), ganzhi.Yinyang());
+        }
     }
 }
