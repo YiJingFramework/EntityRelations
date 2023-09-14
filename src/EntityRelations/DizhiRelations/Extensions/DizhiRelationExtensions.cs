@@ -70,7 +70,7 @@ public static class DizhiRelationExtensions
     /// </returns>
     public static Dizhi Liuhai(this Dizhi dizhi)
     {
-        return Dizhi.FromIndex(4 - (dizhi.Index - 5));
+        return (Dizhi)(3 - ((int)dizhi - 4));
     }
 
     /// <summary>
@@ -103,7 +103,7 @@ public static class DizhiRelationExtensions
     /// </returns>
     public static Dizhi Liuhe(this Dizhi dizhi)
     {
-        return Dizhi.FromIndex(1 - (dizhi.Index - 2));
+        return (Dizhi)(0 - ((int)dizhi - 1));
     }
 
     /// <summary>
@@ -136,7 +136,7 @@ public static class DizhiRelationExtensions
     /// </returns>
     public static Dizhi Liupo(this Dizhi dizhi)
     {
-        if (dizhi.Index is 1 or 3 or 5 or 7 or 9 or 11)
+        if ((int)dizhi is 0 or 2 or 4 or 6 or 8 or 10)
             return dizhi.Next(-3);
         else
             return dizhi.Next(3);

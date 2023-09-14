@@ -42,15 +42,15 @@ public sealed class DizhiSanhui : DizhiRelationBase<DizhiSanhui>
     /// </param>
     public DizhiSanhui(Dizhi theCurrent) : base(theCurrent)
     {
-        switch (theCurrent.Index)
+        switch ((int)theCurrent)
         {
-            case 3 or 6 or 9 or 12:
+            case 2 or 5 or 8 or 11:
                 this.DizhiOfMeng = theCurrent;
                 this.DizhiOfZhong = theCurrent.Next();
                 this.DizhiOfJi = theCurrent.Next(2);
                 this.TheOthers = (this.DizhiOfZhong, this.DizhiOfJi);
                 break;
-            case 4 or 7 or 10 or 1:
+            case 3 or 6 or 9 or 0:
                 this.DizhiOfMeng = theCurrent.Next(-1);
                 this.DizhiOfZhong = theCurrent;
                 this.DizhiOfJi = theCurrent.Next(1);

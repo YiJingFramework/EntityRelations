@@ -17,20 +17,20 @@ public static class DizhiToStringConversions
     public static EntityToStringConversion<Dizhi> Shengxiao { get; }
         = (dizhi) =>
         {
-            return dizhi.Index switch
+            return (int)dizhi switch
             {
-                1 => "鼠",
-                2 => "牛",
-                3 => "虎",
-                4 => "兔",
-                5 => "龙",
-                6 => "蛇",
-                7 => "马",
-                8 => "羊",
-                9 => "猴",
-                10 => "鸡",
-                11 => "狗",
-                _ => "猪" // 12
+                0 => "鼠",
+                1 => "牛",
+                2 => "虎",
+                3 => "兔",
+                4 => "龙",
+                5 => "蛇",
+                6 => "马",
+                7 => "羊",
+                8 => "猴",
+                9 => "鸡",
+                10 => "狗",
+                _ => "猪"
             };
         };
 
@@ -43,20 +43,20 @@ public static class DizhiToStringConversions
     public static EntityToStringConversion<Dizhi> ShengxiaoInEnglish { get; }
         = (dizhi) =>
         {
-            return dizhi.Index switch
+            return (int)dizhi switch
             {
-                1 => "Rat",
-                2 => "Cow",
-                3 => "Tiger",
-                4 => "Rabbit",
-                5 => "Long",
-                6 => "Snake",
-                7 => "Horse",
-                8 => "Sheep",
-                9 => "Monkey",
-                10 => "Chicken",
-                11 => "Dog",
-                _ => "Pig" // 12
+                0 => "Rat",
+                1 => "Cow",
+                2 => "Tiger",
+                3 => "Rabbit",
+                4 => "Long",
+                5 => "Snake",
+                6 => "Horse",
+                7 => "Sheep",
+                8 => "Monkey",
+                9 => "Chicken",
+                10 => "Dog",
+                _ => "Pig"
             };
         };
 }

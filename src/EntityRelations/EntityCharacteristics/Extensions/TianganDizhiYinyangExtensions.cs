@@ -23,7 +23,7 @@ public static class TianganDizhiYinyangExtensions
     /// </returns>
     public static Yinyang Yinyang(this Tiangan tiangan)
     {
-        return new(tiangan.Index % 2 is 1);
+        return new((int)tiangan % 2 is 0);
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public static class TianganDizhiYinyangExtensions
     /// </returns>
     public static Yinyang Yinyang(this Dizhi dizhi)
     {
-        return new(dizhi.Index % 2 is 1);
+        return new((int)dizhi % 2 is 0);
     }
 
     /// <summary>

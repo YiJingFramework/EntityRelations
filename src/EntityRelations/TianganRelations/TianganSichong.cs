@@ -41,15 +41,16 @@ public sealed class TianganSichong : TianganRelationBase<TianganSichong>
     /// </exception>
     public TianganSichong(Tiangan theCurrent) : base(theCurrent)
     {
-        if (theCurrent.Index < 5)
+        var currentInt = (int)theCurrent;
+        if (currentInt < 4)
         {
-            this.TheOther = theCurrent.Next(5 + 1);
+            this.TheOther = (Tiangan)(currentInt + 5 + 1);
             this.TianganAfterJia = theCurrent;
             this.TianganAfterGeng = this.TheOther;
         }
-        else if (theCurrent.Index >= 7)
+        else if (currentInt >= 6)
         {
-            this.TheOther = theCurrent.Next(-1 - 5);
+            this.TheOther = (Tiangan)(currentInt - 1 - 5);
             this.TianganAfterJia = this.TheOther;
             this.TianganAfterGeng = theCurrent;
         }

@@ -37,9 +37,9 @@ public sealed class DizhiLiuhe : DizhiRelationBase<DizhiLiuhe>
     /// </param>
     public DizhiLiuhe(Dizhi theCurrent) : base(theCurrent)
     {
-        this.TheOther = Dizhi.FromIndex(1 - (theCurrent.Index - 2));
+        this.TheOther = (Dizhi)(0 - ((int)theCurrent - 1));
 
-        if (theCurrent.Index is >= 2 and < 8)
+        if ((int)theCurrent is >= 1 and < 7)
         {
             this.DizhiAfterChou = theCurrent;
             this.DizhiAfterWei = this.TheOther;

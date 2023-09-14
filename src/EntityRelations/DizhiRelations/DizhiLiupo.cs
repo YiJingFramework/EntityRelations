@@ -42,7 +42,7 @@ public sealed class DizhiLiupo : DizhiRelationBase<DizhiLiupo>
     /// </param>
     public DizhiLiupo(Dizhi theCurrent) : base(theCurrent)
     {
-        if (theCurrent.Index is 1 or 3 or 5 or 7 or 9 or 11)
+        if ((int)theCurrent is 0 or 2 or 4 or 6 or 8 or 10)
         {
             this.TheOther = theCurrent.Next(-3);
             this.DizhiOfYin = this.TheOther;

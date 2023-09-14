@@ -22,15 +22,15 @@ public static class TianganJigongExtensions
     /// </returns>
     public static Dizhi Jigong(this Tiangan tiangan)
     {
-        return tiangan.Index switch
+        return (int)tiangan switch
         {
-            1 => Dizhi.Yin,
-            2 => Dizhi.Chen,
-            3 or 5 => Dizhi.Si,
-            4 or 6 => Dizhi.Wei,
-            7 => Dizhi.Shen,
-            8 => Dizhi.Xu,
-            9 => Dizhi.Hai,
+            0 => Dizhi.Yin,
+            1 => Dizhi.Chen,
+            2 or 4 => Dizhi.Si,
+            3 or 5 => Dizhi.Wei,
+            6 => Dizhi.Shen,
+            7 => Dizhi.Xu,
+            8 => Dizhi.Hai,
             _ => Dizhi.Chou
         };
     }

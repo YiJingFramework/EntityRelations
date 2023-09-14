@@ -70,9 +70,9 @@ public sealed class ShierZhangshengProvider
         {
             int difference;
             if (this.reverse)
-                difference = this.zhangsheng.Index - dizhi.Index;
+                difference = (int)this.zhangsheng - (int)dizhi;
             else
-                difference = dizhi.Index - this.zhangsheng.Index;
+                difference = (int)dizhi - (int)this.zhangsheng;
             return (ShierZhangsheng)((difference + 12) % 12);
         }
     }

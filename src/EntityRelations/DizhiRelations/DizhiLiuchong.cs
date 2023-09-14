@@ -39,7 +39,7 @@ public sealed class DizhiLiuchong : DizhiRelationBase<DizhiLiuchong>
     {
         this.TheOther = theCurrent.Next(6);
 
-        if (theCurrent.Index < 7)
+        if ((int)theCurrent < 6)
         {
             this.DizhiAfterZi = theCurrent;
             this.DizhiAfterWu = this.TheOther;

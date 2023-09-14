@@ -21,6 +21,18 @@ public static class DizhiMengZhongJiExtensions
     /// </returns>
     public static MengZhongJi MengZhongJi(this Dizhi dizhi)
     {
-        return (MengZhongJi)(dizhi.Index % 12 % 3);
+        /*
+         * | Method | Mean     | Error    | StdDev   |
+         * |------- |---------:|---------:|---------:|
+         * | Mod    | 79.32 ns | 1.165 ns | 1.090 ns |
+         * | Switch | 73.92 ns | 1.523 ns | 1.813 ns |
+        */
+
+        return (int)dizhi switch
+        {
+            2 or 5 or 8 or 11 => DizhiMengZhongJis.MengZhongJi.Meng,
+            0 or 3 or 6 or 9 => DizhiMengZhongJis.MengZhongJi.Zhong,
+            _ => DizhiMengZhongJis.MengZhongJi.Ji
+        };
     }
 }

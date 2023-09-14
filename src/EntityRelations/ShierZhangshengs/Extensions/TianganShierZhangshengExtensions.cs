@@ -10,17 +10,17 @@ public static class TianganShierZhangshengExtensions
 {
     private static (Dizhi, bool) GetZhangshengAndReverse(Tiangan tiangan)
     {
-        return tiangan.Index switch
+        return (int)tiangan switch
         {
-            1 => (Dizhi.Hai, false),
-            3 => (Dizhi.Yin, false),
-            5 => (Dizhi.Yin, false),
-            7 => (Dizhi.Si, false),
-            9 => (Dizhi.Shen, false),
-            2 => (Dizhi.Wu, true),
-            4 => (Dizhi.You, true),
-            6 => (Dizhi.You, true),
-            8 => (Dizhi.Zi, true),
+            0 => (Dizhi.Hai, false),
+            2 => (Dizhi.Yin, false),
+            4 => (Dizhi.Yin, false),
+            6 => (Dizhi.Si, false),
+            8 => (Dizhi.Shen, false),
+            1 => (Dizhi.Wu, true),
+            3 => (Dizhi.You, true),
+            5 => (Dizhi.You, true),
+            7 => (Dizhi.Zi, true),
             _ => (Dizhi.Mao, true)
         };
     }
@@ -93,9 +93,9 @@ public static class TianganShierZhangshengExtensions
         var (zhangsheng, reverse) = GetZhangshengAndReverse(tiangan);
         int difference;
         if (reverse)
-            difference = zhangsheng.Index - dizhi.Index;
+            difference = (int)zhangsheng - (int)dizhi;
         else
-            difference = dizhi.Index - zhangsheng.Index;
+            difference = (int)dizhi - (int)zhangsheng;
         return (ShierZhangsheng)((difference + 12) % 12);
     }
 }

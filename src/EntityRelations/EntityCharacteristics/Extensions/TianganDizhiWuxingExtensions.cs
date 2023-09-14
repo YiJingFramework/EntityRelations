@@ -23,7 +23,7 @@ public static class TianganDizhiWuxingExtensions
     /// </returns>
     public static Wuxing Wuxing(this Tiangan tiangan)
     {
-        return (Wuxing)((tiangan.Index - 1) / 2);
+        return (Wuxing)((int)tiangan / 2);
     }
 
     /// <summary>
@@ -40,20 +40,20 @@ public static class TianganDizhiWuxingExtensions
     /// </returns>
     public static Wuxing Wuxing(this Dizhi dizhi)
     {
-        return dizhi.Index switch
+        return (int)dizhi switch
         {
-            1 => PrimitiveTypes.Wuxing.Shui, // 子
-            2 => PrimitiveTypes.Wuxing.Tu, // 丑
-            3 => PrimitiveTypes.Wuxing.Mu, // 寅
-            4 => PrimitiveTypes.Wuxing.Mu, // 卯
-            5 => PrimitiveTypes.Wuxing.Tu, // 辰
-            6 => PrimitiveTypes.Wuxing.Huo, // 巳
-            7 => PrimitiveTypes.Wuxing.Huo, // 午
-            8 => PrimitiveTypes.Wuxing.Tu, // 未
-            9 => PrimitiveTypes.Wuxing.Jin, // 申
-            10 => PrimitiveTypes.Wuxing.Jin, // 酉
-            11 => PrimitiveTypes.Wuxing.Tu, // 戌
-            _ => PrimitiveTypes.Wuxing.Shui, // 亥
+            0 => PrimitiveTypes.Wuxing.Shui,
+            1 => PrimitiveTypes.Wuxing.Tu,
+            2 => PrimitiveTypes.Wuxing.Mu,
+            3 => PrimitiveTypes.Wuxing.Mu,
+            4 => PrimitiveTypes.Wuxing.Tu,
+            5 => PrimitiveTypes.Wuxing.Huo,
+            6 => PrimitiveTypes.Wuxing.Huo,
+            7 => PrimitiveTypes.Wuxing.Tu,
+            8 => PrimitiveTypes.Wuxing.Jin,
+            9 => PrimitiveTypes.Wuxing.Jin,
+            10 => PrimitiveTypes.Wuxing.Tu,
+            _ => PrimitiveTypes.Wuxing.Shui
         };
     }
 
