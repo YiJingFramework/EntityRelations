@@ -3,17 +3,17 @@ using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GanzhiCombinations;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-namespace YiJingFramework.EntityRelations.GuaNajias.Extensions;
+namespace YiJingFramework.EntityRelations.GuaHexagramNajias.Extensions;
 
 /// <summary>
-/// 关于卦纳甲的扩展。
-/// Extensions about Guas' Najia.
+/// 关于六爻卦纳甲的扩展。
+/// Extensions about Guas' (Hexagram) Najia.
 /// </summary>
-public static class GuaNajiaExtensions
+public static class GuaHexagramNajiaExtensions
 {
     /// <summary>
     /// 获取六爻卦的纳甲。
-    /// Get the Gua's (Hexagram) Najia.
+    /// Get a Gua's (Hexagram) Najia.
     /// </summary>
     /// <param name="gua">
     /// 卦。

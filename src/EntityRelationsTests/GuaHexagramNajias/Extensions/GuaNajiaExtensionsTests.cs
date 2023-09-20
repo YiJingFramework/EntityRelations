@@ -3,7 +3,7 @@ using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GanzhiCombinations;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-namespace YiJingFramework.EntityRelations.GuaNajias.Extensions.Tests;
+namespace YiJingFramework.EntityRelations.GuaHexagramNajias.Extensions.Tests;
 
 [TestClass()]
 public class GuaNajiaExtensionsTests
