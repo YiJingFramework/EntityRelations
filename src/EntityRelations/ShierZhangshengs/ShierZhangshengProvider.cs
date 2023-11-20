@@ -6,28 +6,18 @@ namespace YiJingFramework.EntityRelations.ShierZhangshengs;
 /// 十二长生提供器。
 /// A Shier Zhangshengs' provider.
 /// </summary>
-public sealed class ShierZhangshengProvider
+/// <param name="zhangsheng">
+/// 长生所对应的地支。
+/// The corresponding Dizhi of Zhangsheng.
+/// </param>
+/// <param name="reverse">
+/// 逆行。
+/// Goes in the reverse order.
+/// </param>
+public sealed class ShierZhangshengProvider(Dizhi zhangsheng, bool reverse)
 {
-    private readonly Dizhi zhangsheng;
-    private readonly bool reverse;
-
-    /// <summary>
-    /// 创建一个 <seealso cref="ShierZhangshengProvider"/> 的实例。
-    /// Create an instance of <seealso cref="ShierZhangshengProvider"/>.
-    /// </summary>
-    /// <param name="zhangsheng">
-    /// 长生所对应的地支。
-    /// The corresponding Dizhi of Zhangsheng.
-    /// </param>
-    /// <param name="reverse">
-    /// 逆行。
-    /// Goes in the reverse order.
-    /// </param>
-    public ShierZhangshengProvider(Dizhi zhangsheng, bool reverse)
-    {
-        this.zhangsheng = zhangsheng;
-        this.reverse = reverse;
-    }
+    private readonly Dizhi zhangsheng = zhangsheng;
+    private readonly bool reverse = reverse;
 
     /// <summary>
     /// 获取指定十二长生所对应的地支。

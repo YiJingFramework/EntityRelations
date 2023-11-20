@@ -1,7 +1,7 @@
 ﻿using YiJingFramework.PrimitiveTypes;
 using YiJingFramework.PrimitiveTypes.GuaWithFixedCount;
 
-byte[] hexagramTable = new byte[] {
+byte[] hexagramTable = [
     127, 64, 81, 98, 87, 122,
     66, 80, 119, 123, 71, 120,
     125, 111, 68, 72, 89, 102,
@@ -12,7 +12,7 @@ byte[] hexagramTable = new byte[] {
     95, 126, 88, 70, 90, 86,
     93, 110, 73, 100, 116,
     75, 77, 108, 118, 91,
-    114, 83, 115, 76, 85, 106 };
+    114, 83, 115, 76, 85, 106 ];
 
 char ToUnicodeChar(GuaHexagram gua)
 {
