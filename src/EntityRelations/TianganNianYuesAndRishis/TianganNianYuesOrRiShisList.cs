@@ -8,15 +8,19 @@ namespace YiJingFramework.EntityRelations.TianganNianYuesAndRishis;
 /// 年中各月或日中各时。
 /// Yues in a Nian, or Shis in a Nian.
 /// </summary>
-/// <param name="first">
+/// <param name="firstTiangan">
 /// 首个天干。
 /// The first Tiangan.
 /// </param>
-public abstract class TianganNianYuesOrRiShisList<TSelf>(Tiangan first) : 
+/// <param name="firstDizhi">
+/// 首个地支。
+/// The first Dizhi.
+/// </param>
+public abstract class TianganNianYuesOrRiShisList<TSelf>(Tiangan firstTiangan, Dizhi firstDizhi) : 
     IReadOnlyList<Ganzhi>
     where TSelf : TianganNianYuesOrRiShisList<TSelf>
 {
-    private readonly Ganzhi first = Ganzhi.FromGanzhi(first, Dizhi.Zi);
+    private readonly Ganzhi firstGanzhi = Ganzhi.FromGanzhi(firstTiangan, firstDizhi);
 
     /// <summary>
     /// 获取月或时。
@@ -34,7 +38,7 @@ public abstract class TianganNianYuesOrRiShisList<TSelf>(Tiangan first) :
     {
         get
         {
-            return this[(int)index];
+            return this[index - firstDizhi];
         }
     }
 
@@ -50,11 +54,18 @@ public abstract class TianganNianYuesOrRiShisList<TSelf>(Tiangan first) :
     /// 月或时。
     /// Yue or Shi.
     /// </returns>
+    /// <exception cref="ArgumentOutOfRangeException">
+    /// <paramref name="index"/> is less than zero (inclusive) or greater than twelve (exclusive).
+    /// </exception>
     public Ganzhi this[int index]
     {
         get
         {
-            return this.first.Next(index);
+            if (index >= 12 || index < 0)
+                throw new ArgumentOutOfRangeException(
+                    nameof(index), 
+                    $"{nameof(index)} is less than zero (inclusive) or greater than twelve (exclusive).");
+            return this.firstGanzhi.Next(index);
         }
     }
 
@@ -78,7 +89,7 @@ public abstract class TianganNianYuesOrRiShisList<TSelf>(Tiangan first) :
             }
         }
 
-        return AsEnumerable(this.first).GetEnumerator();
+        return AsEnumerable(this.firstGanzhi).GetEnumerator();
     }
 
     /// <inheritdoc />

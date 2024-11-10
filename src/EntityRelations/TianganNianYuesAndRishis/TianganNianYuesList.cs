@@ -11,7 +11,8 @@ namespace YiJingFramework.EntityRelations.TianganNianYuesAndRishis;
 /// 年。
 /// Nian.
 /// </param>
-public sealed class TianganNianYuesList(Tiangan niangan) : TianganNianYuesOrRiShisList<TianganNianYuesList>(GetFirst(niangan))
+public sealed class TianganNianYuesList(Tiangan niangan) 
+    : TianganNianYuesOrRiShisList<TianganNianYuesList>(GetFirst(niangan), Dizhi.Yin)
 {
     private static Tiangan GetFirst(Tiangan niangan)
     {

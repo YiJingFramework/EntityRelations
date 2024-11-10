@@ -12,7 +12,8 @@ namespace YiJingFramework.EntityRelations.TianganNianYuesAndRishis;
 /// 日。
 /// Ri.
 /// </param>
-public sealed class TianganRiShisList(Tiangan rigan) : TianganNianYuesOrRiShisList<TianganRiShisList>(GetFirst(rigan))
+public sealed class TianganRiShisList(Tiangan rigan)
+    : TianganNianYuesOrRiShisList<TianganRiShisList>(GetFirst(rigan), Dizhi.Zi)
 {
     private static Tiangan GetFirst(Tiangan rigan)
     {

@@ -29,7 +29,7 @@ public class TianganNianYuesListTests
         }
 
         var nian = Tiangan.Jia;
-        var yue = Ganzhi.FromGanzhi(Tiangan.Bing, Dizhi.Zi);
+        var yue = Ganzhi.FromGanzhi(Tiangan.Bing, Dizhi.Yin);
         for (int i = 0; i < 12; i++)
         {
             for (int j = 0; j < 12; j++)
